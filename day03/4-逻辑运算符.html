@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       && 并且
+          A&&B  A条件成立时，才会走B，最后的结果是B，如果A不是true的话，B就不会走了
+
+          在判断中，A和B都要成立，才会执行之后的条件语句
+
+       || 或者
+         A||B  A成立时，不会走B。A不成立时，走B.。要判断A是不是true，B是不是true
+
+       三元运算符（三目）
+           一元运算符  typeof num
+           二元运算符  1 + 1
+           三元运算符  条件？语句一：语句二    看问号前面的条件成立与否，如果成立，走冒号前的语句一；如果条件不成立，走冒号后的语句二
+    
+    */
+    console.log(true?'对':'错');
+
+
+    if('车票'&&'身份证'){
+        console.log('上车')
+    }
+    if('nv1' != '' && 'nv2' != ''){}
+
+    if('车票'||'身份证'){
+        console.log('上车');
+    }
+
+    console.log('')
+
+    function fn(){
+   console.log(1);
+    }
+
+    let ff = 'function';
+
+//    if(ff === 'function'){
+//       fn()
+//    }
+   // 上面这个条件可以写成下面这个并且，当前面的成立时，执行了后面的这个，这样写比较简单
+  ( ff === 'function') && fn();
+
+let n = false||5&&8||6&&'234234'||true||null||0&&'';
+console.log(n); //->8;
+let m = false||5&&8&&6&&'234234'&&(1-1)||true||null||0&&'';
+console.log(m); //->true  
+let d = false || 6 && (1-1) && undefined || null && [] && '' || {} && true;
+console.log(d); //->true   
+
+</script>   
+</body>
+</html>

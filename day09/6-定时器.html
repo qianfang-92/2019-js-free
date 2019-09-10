@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            width:50px;
+            height:200px;
+            border:1px solid #000;
+            position:fixed;
+            bottom:0;
+            right:-52px;
+            transition:1s;
+
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">拆弹专家</button>
+    <div id="box"></div>
+<script>
+    /*
+      定时器来调用函数
+         
+         炸一次  到了那个时间就炸，只有一次
+            setTimeout(回调函数||字符串函数，什么时候执行函数(时间，毫秒)，第一个回调函数的参数)  
+                返回值是一个数字(当前定时器的编号)
+            清除定时器：
+               clearTimeout(定时器编号)
+
+         连续炸，每到某个时间，就炸一次，不断连续的
+            setInterval()   参数和setTimeout一样   可以用作轮播图，和时间的自动更新
+            清除定时器：
+                clearInterval(定时器的编号)
+
+        不管是哪个清除定时器的方式(clearTimeout||clearInterval)，都可以清除定时器
+    */
+    // let t = setTimeout(function(){alert('boom~~~')},1000);  //
+    // console.log(t);
+
+    btn.onclick = function() {
+        // clearTimeout(t);
+        clearInterval(s);
+
+    }
+    setTimeout(function(){
+        box.style.right = 0;
+        setTimeout(function(a,b) {
+            box.style.right = '-52px';
+            console.log(a+b);
+        },3000,1,2)
+    },5000)
+
+    let s = setInterval(function() {
+        console.log('好');
+    },3000);
+
+
+</script>
+</body>
+</html>

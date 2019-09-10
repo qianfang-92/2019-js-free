@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+      find : 找到回调函数中条件符合的一个数据（只能找一个数据），并且返回，如果没有这个数据，返回undefined，如果有这个数据，返回这个数据
+
+         find(function(item,index,all) {
+             return 条件（需要为true）
+         })
+
+    findindex  ：找到回调函数中条件符合的一个数据（只能找一个数据）的索引，如果没有这个数据，返回-1，如果有这个数据，返回这个数据的索引
+    
+    */
+    let ary = [true,false,1,5,'9',[null]];
+
+    function find(ary,data) {
+        for(let i = 0 ;i < ary.length;i++) {
+            if(ary[i] === data){
+                return data;
+            }
+        }
+        return null;
+    }
+    console.log(find(ary,9));
+
+
+    function findindex(ary,data) {
+        for(let i = 0 ;i < ary.length;i++) {
+            if(ary[i] === data){
+                return i;
+            }
+        }
+        return null;
+    }
+    console.log(findindex(ary,'9'));
+    
+
+    console.log(ary.find(item => item === '10'));
+    console.log(ary.findIndex(item => item === '10')); // ->  -1  没有的话，返回的索引是-1
+</script>
+</body>
+</html>

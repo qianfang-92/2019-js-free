@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:200px;
+    height: 50px;
+    border:1px solid #000;
+}
+.btns_box{
+    display: none;
+}
+#btn{
+    height:50px;
+    float:right;
+}
+#txt{
+    width:150px;
+    float: left;
+    line-height: 50px;
+}
+#txt_box{
+    display: block;
+}
+</style>
+</head>
+<body>
+    <div id="box">
+        <div id="txt_box" class="txt_box">
+            <div id="txt" class="txt">好好学习,天天向上</div>
+            <button id="btn" class="btn">修改</button>
+        </div>
+        <div class="btns_box" class="btns_box">
+            <input id="txt2" value="好好学习,天天向上" class="changev" />
+            <button class="q">取消</button>
+            <button class="ok">确定</button>
+        </div>
+    </div>
+<script>
+const box = document.getElementById('box'); //代码块缓存
+//基于box下的.txt ，就不基于整个页面了，效率更高
+const txt = box.querySelelctor('.txt');
+const btn = box.querySelector('.btn');
+const changev = box.querySelector('.changev');
+const q = box.querySelector('.q');
+const ok = box.querySelector('.ok');
+const txt_box = box.querySelector('.txt_box');
+const btns_box = box.querySelector('.btns_box');
+
+btn.onclick = function() {
+    txt_box.style.display = 'none';
+    btns_box.style.display = 'block';
+}
+
+//点击确定
+ok.onclick = function() {
+    let v = changev.value;
+    if(v === ''){
+        alert('内容不能为空');
+        return;
+    }
+    txt_box.innerHTML = v;
+}
+
+</script>
+</body>
+</html>

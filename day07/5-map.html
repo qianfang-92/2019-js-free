@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul"></ul>
+<script>
+    /*
+      map:
+        循环一个数组，获得一个新的数组，并返回它，长度和原数组的长度一致
+        必须要有返回值，不然为undefined 
+
+        map(callback,this)  也能改this
+    
+    
+    */
+
+    //把下面的数组变成li+数据内容
+    let ary = [1,5,3,53,5];
+    // let html = '';
+    // ary.forEach(item => {
+    //     html += `<li>${item}</li>`;
+    // })
+    // ul.innerHTML = html;
+
+    ary.map(function(){
+        console.log(this)
+    },document);
+
+    ul.innerHTML = ary.map(item => `<li>${item}</li>`).join('');
+
+
+
+
+</script>
+</body>
+</html>

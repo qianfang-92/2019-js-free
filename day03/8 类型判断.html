@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+         typeof 
+            字符串  数字  布尔值  undefined  但是不能精确知道null，把它作为object；数组也检测不出来，不够精准
+
+        请写一个判断变量为数组的方法
+           instanceof  :二元运算符，判断右边的值是不是左边的值的构造函数   ；就是说右值是不是左值的爸爸
+           
+           object的toString可以判断当前的是什么类型
+
+        Array 构造函数  浏览器内置的
+    */
+    console.log(Array); //  所有的[]都是Array里的
+
+    console.log(ary instanceof Array);  //看ary是不是Array构造出来的，这样就可以判断ary是不是数组
+
+    console.log(Object.prototype.toString.call(ary) == '[object Array]'); 
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let a = 5;
+    let b = a;
+    b = 10;
+    console.log(a); // ->5   
+
+    let obj = {
+        age:5
+    }
+    let obj2 = obj;
+    obj2.age = 10;
+    console.log(obj.age); // ->10
+    
+/*
+    赋值和赋址
+    运行js的时候会开辟一个执行栈，专门用来运行js的，在浏览器中会执行叫做全局作用域（windows）
+    在服务器中环境为global
+
+    当声明的变量赋值的是一个简单数据类型， 
+    let a = 10; 10是一个简单数据类型，这个声明就在全局中开辟了一个小的空间存放10，
+    当let b = a;时，就把这个简单数据类型复制一份，再开辟一个小空间，还是10，并把这个复制的10赋值给b,这里面的10不是a的那个10了
+    b = 5;时，只是修改了b的那个空间的10，并没有修改a的那个空间的10；这样，并不会影响a的值
+
+    当声明的变量赋值的是一个引用数据类型，不会再全局中开辟一个空间，而是在全局外开辟一个堆内存地址
+    let obj = {} ;就是把这个新开辟的堆内存地址给了obj，obj实际代表的是一个地址
+    let obj2 = obj ;这时，obj的地址也给了obj2；所以，obj和obj2都指向了同一个地址
+    所以当修改obj2的属性时，相当于在修改那个地址中的属性值，这样，引用同一个地址的obj的属性值同时也会改变的
+
+    所以以后遇见这样的情况，只需要看等号右边的数据类型是什么，简单类型就只改变自身，不改变别人，引用类型就会改变一系列连锁的变量
+
+*/
+let ary = [1,2,3,5];
+let ary2 = ary;
+ary2[2] = 10;
+ary2 = [1,2,5,6];
+console.log(ary[2]);
+
+</script>
+</body>
+</html>

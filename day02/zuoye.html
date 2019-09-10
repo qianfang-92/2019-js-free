@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="num1">
+    <select name="" id="sel">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="num2"> =
+    <input type="text" id="res">
+    <button id="btn">计算</button>
+    <script>
+        const num1 = document.getElementById('num1');
+        const num2 = document.getElementById('num2');
+        const res = document.getElementById('res');
+        const btn = document.getElementById('btn');
+        const sel = document.getElementById('sel');
+
+        /*
+           当点击计算按钮的时候，获取到num1和num2的value，然后进行
+        */
+
+        btn.onclick = function () {
+            let nv1 = num1.value;
+            let nv2 = num2.value;
+            let sv = sel.innerText;
+            let count = 0;
+            if (nv1 != '') {// num不能为空
+                if (nv2 != '') {//num2不能为空
+
+                    if (parseFloat(num1)) {
+                        if (parseFloat(num2)) {
+                            if (sv == '+') {
+                                count = parseInt(nv1) + parseInt(nv2);
+                            } else if (sv == '-') {
+                                count = parseInt(nv1) - parseInt(nv2);
+                            } else if (sv == '*') {
+                                count = parseInt(nv1) * parseInt(nv2);
+                            } else if (sv == '/') {
+                                count = parseInt(nv1) / parseInt(nv2);
+                            } else if (sv == '%') {
+                                count = parseInt(nv1) % parseInt(nv2);
+                            }
+                            res.value = count;
+                        }
+
+
+                    }
+
+                } else {
+                    alert('第二个值不能为空')
+                }
+
+            } else {
+                alert('第一个值不能为空')
+            }
+
+
+        }
+        console.log(opt.value);
+    </script>
+</body>
+
+</html>

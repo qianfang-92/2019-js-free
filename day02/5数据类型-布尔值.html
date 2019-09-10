@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+   
+
+
+*/
+console.log(Boolean(true));  // ->true
+console.log(Boolean(false));  // ->false
+console.log(Boolean(0)); // ->false
+console.log(Boolean('')); // ->false
+console.log(Boolean(' '));  // ->true 空字符串为假，非空，包括只有空格键的字符串为真
+console.log(Boolean(null)); // ->false
+console.log(Boolean([])); // ->true
+console.log(Boolean(Infinity)); // ->true
+console.log(Boolean(NaN)); // ->false
+console.log(Boolean(isNaN(NaN))); // ->true
+console.log(Boolean(undefined)); // ->false
+console.log(Boolean({})); // ->true  对象数据类型 不管什么类型，因为是个复合类型，所以不管是不是空集都是true
+console.log(Boolean(Number([])));  // ->false
+console.log(Boolean(new Date));  // ->true
+
+// !： 非、否 的意思，颠倒true和false值 ，并转换为布尔值;等于先用Boolean转化数据类型为布尔值，再给其布尔值颠倒。
+console.log(![]); // ->false
+console.log(!null); // ->true
+
+//快速知道某个东西的布尔值，写两个！！就可以
+
+</script>   
+</body>
+</html>

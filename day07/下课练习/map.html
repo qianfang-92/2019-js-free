@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul"></ul>
+<script>
+/*
+   map:map(callback,修改this指向)
+        循环数组的每一项，返回一个新的数组，原数组与新数组的长度一致
+    
+    下面数据变成 li + 数据内容
+*/
+let ary = [1,2,3,34,5];
+
+ary.map(function(){
+    console.log(this)
+},document);
+
+// let html = '';
+// ary.forEach(item =>{
+//     html += `<li>${item}</li>`
+// })
+// ul.innerHTML = html;
+
+console.log(ary.map(function(item){return item}));
+
+ul.innerHTML = ary.map(item => `<li>${item}</li>`).join('');
+
+console.log(ary.map(item => `<li>${item}</li>`).join(''));
+</script>
+</body>
+</html>

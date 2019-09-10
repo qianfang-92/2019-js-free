@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>评分</title>
+	<style>
+		body,
+		h1 {
+			margin: 0;
+			padding: 0;
+			-webkit-font-smoothing: antialiased;
+		}
+
+		.starts {
+			overflow: hidden;
+		}
+
+		.starts span {
+			display: block;
+			float: left;
+			/* padding: 3px; */
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="pingfen.css" />
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="baidu">
+			<div class="caption">
+				<h1></h1>
+				<span>总体评价</span>
+			</div>
+			<div class="context">
+				<ul class="starts">
+					<li class="xx2"></li>
+					<li class="xx2"></li>
+					<li class="xx2"></li>
+					<li class="xx2"></li>
+					<li class="xx2"></li>
+				</ul>
+				<div class="info" id="info"></div>
+			</div>
+			<div class="tips">
+				小提示：点击星星就能打分
+			</div>
+		</div>
+    </div>
+    
+    <script>
+		/*
+			xx2 -> 空星
+			xx -> 有星
+			xx3 -> 透明星
+		*/
+
+		let arr = ['极差', '一般', '不错', '推荐', '力推'];
+
+        const lis = document.querySelectorAll('li');
+        let sure = -1;
+
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].onclick = function() {
+                if (sure == i) {
+                    sure = -1;
+                } else {
+                    sure = i;
+                }
+            }
+            lis[i].onmouseover = function () {
+                info.style.display = 'block';
+                info.innerText = arr[i];
+                for (let j = 0; j < lis.length; j++) {
+                    if (j <= i) {
+                        if (i <2) {
+                            lis[j].className = 'xx3';
+                        } else {
+                            lis[j].className = 'xx';
+                        }
+                    } else {
+                        lis[j].className = 'xx2';
+                    }
+                }
+            }
+            lis[i].onmouseout = function () {
+                for (let j = 0; j < lis.length; j++) {
+                    if (j <= sure) {
+                        if (sure < 2) {
+                            lis[j].className = 'xx3';
+                        } else {
+                            lis[j].className = 'xx';
+                        }
+                        info.innerText = arr[sure];
+                    } else {
+                        lis[j].className = 'xx2';
+                        if (sure == -1) {
+                            info.style.display = 'none';
+                        }
+                    }
+                }
+            }
+        }
+
+	</script>
+</body>
+
+</html>

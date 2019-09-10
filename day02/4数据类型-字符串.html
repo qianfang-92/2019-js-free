@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div></div>
+    </div>
+<script>
+/*
+    HTML中的所有文本是字符串
+
+    设置样式时，值也要是字符串;
+
+    加法运算是字符串拼接
+
+    就是把原有的结构拆解开，成一个个被单引号包括的字符串，再用+号拼接起来，合起来成为原来的结构
+
+    ES6中新增的模板字符串语法
+    
+    所有数据类型都可以用toString的方法将它们转为字符串
+
+    所有数据类型(除了null和undefined) + '' 都会字符串拼接，变成字符串；
+
+    某种情况下会默认调用toString方法：
+        alert
+        window 有个name的属性，它的属性值是个字符串，如果没有声明别的name,就算你写
+        window.name = 5;  给name赋值一个数字，但是consoe.log(name)；出现的还是字符串'5';这就是隐式类型转换了
+
+*/
+let obj = {
+    name:'qianfang'
+}
+alert(obj);  //->弹框出[object Object]
+
+let w = 150;
+let h = 200;
+let bg = 'lightblue';
+let word = '老师好';
+let f = 16;
+let c = 'darkolivegreen';
+let wt = 800;
+const box = document.getElementById('box');
+
+// 字符串不允许回车，会报错
+// 新增的这个字符串可以随意回车
+box.innerHTML = '<div style="width:'+w+"px;height:"+h+'px;background:'+bg+";font-size:"+f+";color:"+c+';font-weight:'+wt+'">'+word+'</div>';
+//模板字符串中进行字符串拼接时，用的是${}，里面添加变量或者字符串或者运算都可以
+box.innerHTML = `<div  
+style:"
+width:${w*2}px;
+height:${h}px;
+background:${'green'};
+"></div>`
+
+//console.log(null.toSting());  //->报错
+console.log({}.toString()); //->[object Object]
+console.log(undefined.toString());  // ->报错
+</script>
+</body>
+</html>

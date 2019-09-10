@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">0</button>
+    <script>
+        /*
+           自定义属性：
+                给引用类型添加一个自定义的属性名
+    
+           变量：
+             let a = 10;    当前这个a是个自定义的变量  （前面没主的就是变量）
+           属性:
+             obj.a = 10;    当前这个a是obj的一个自定义的属性（前面有主的就是属性）
+        
+        
+        */
+        let num = 0;
+        btn.onclick = function () {
+
+            if (num < 2) {
+                num++;
+                btn.innerHTML = num;
+            } else {
+                btn.disabled = true;
+            }
+        }
+
+        /*
+          this  这个
+          在点击的时候，点谁，this就是这个被点击的元素；
+        */
+
+    </script>
+</body>
+
+</html>

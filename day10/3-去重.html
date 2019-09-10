@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let ary = [1,3,3,4,2,6,3,5,6];
+
+    //第一个：new Set
+    // console.log([...new Set(ary)]);
+    
+
+    //第二个：将数组的各项放进一个对象里，由于key值相同时会覆盖，所以会去重
+    let obj = {};  //对象的key值是数字时，会从小到大排列
+    for(let i = 0; i < ary.length;i++) {
+        obj[ary[i]] = '';
+    }
+    ary.length = 0;
+    for(let attr in obj) {
+        ary.push(Number(attr));
+    }
+    console.log(ary);
+
+
+    // 第三个：重新一个数组，如果里面没有ary里的值就push，如果有就跳过，也可以去重
+    let ary2 = [];
+    for(let i = 0; i < ary.length; i++) {
+        if(ary2.includes(ary[i])) {
+            continue;
+        }else{
+            ary2.push(ary[i]);
+        }
+    }
+    console.log(ary2);
+
+    //第四个：循环套循环 但是记得 j-- 防止数组塌陷
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box div{
+            width:400px;
+            height:200px;
+            border:1px solid firebrick;
+            display:none;
+        }
+        .active{
+            background:lightcoral;
+        }
+        
+        #box .show{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn" class="active">按钮一</button>
+    <button>按钮二</button>
+    <button>按钮三</button>
+    <div id="box">
+        <div class="show">内容一</div>
+        <div>内容二</div>
+        <div>内容三</div>
+    </div>
+    
+<script>
+    /*
+       选项卡
+    
+    */
+    //首先给button都添加点击事件
+    const btns = document.querySelectorAll('button');
+    const divs = document.querySelectorAll('#box div');
+    for(var i = 0;i < btns.length;i++) {
+        btns[i].index = i;
+        btns[i].onclick = function() {
+          for(var i = 0;i < btns.length;i++) {
+              btns[i].className = '';
+              divs[i].className = '';
+          }
+          this.className = 'active';
+          divs[this.index].className = 'show';
+        }
+    }
+</script>
+</body>
+</html>

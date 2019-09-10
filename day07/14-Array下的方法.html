@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+      new Array 构造函数
+      []  实例
+      实例上的方法，叫动态方法
+
+      静态方法：
+          Array.from(类数组) ：把类数组转换成真数组
+          Array.isArray(数据) ：检测参数中的数据是否为数组  是数组，返回true,否则返回false
+     */
+     //构造函数上的方法叫静态方法
+
+     function fn() {
+        console.log(Array.from(arguments));
+     }
+     fn(1,4,2,4,2);
+
+     console.log(Array.isArray({}));  // ->false
+</script>
+</body>
+</html>

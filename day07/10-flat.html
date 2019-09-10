@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       flat：数组的拉平
+           不写参数的时候，拉平数组下一层的数组
+           如果数组中嵌套几层数组，参数可以随意，写几就是拉平几层数组的意思
+           如果要拉平很多层嵌套数组的数组，可以把参数写成Infinity，就完全拉平整个数组；
+    */
+    let ary = [1,2,4,5,[4,7,[3,5,4]]];
+
+    let ary2 = [];
+
+    function flat(ary){
+        for(var i = 0; i < ary.length;i++) {
+        if(Object.prototype.toString.call(ary[i] === '[object Array]')){
+            flat(ary[i]);
+        }else{
+            ary2.push(ary[i]);
+        }
+    }
+    }
+    flat(ary);
+    console.log(ary2);
+    
+</script>
+</body>
+</html>

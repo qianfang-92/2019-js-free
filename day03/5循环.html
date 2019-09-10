@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul,ol{
+            list-style:none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li id="li1">1</li>
+        <li id="li2">2</li>
+        <li id="li3">3</li>
+    </ul>
+<script>
+
+    /*
+       循环语句：批量的做一件相同的事情，或者做有规律的事，可以简化代码
+    
+    */
+    let lis = document.getElementsByTagName('li')  // Tagname是获取一堆类名相同的；获取出来的值为一个类数组
+    //  类数组（集合）
+     //      类似于数组，有和数组类似的下标和length，但是没有数组的方法
+     //  注意：
+     //     通过批量获取元素的方式获取元素是一个集合，就算元素只有一个，要使用集合中的某个元素，一定要加下标
+    console.log(lis); // ->一个集合
+    console.log(lis[0]); // 与通过id获取的一样，是单独的一个元素
+    
+    for(var i =0;i<lis.length;i++){
+    lis[i].style.background = 'darkolivegreen';
+    }
+
+    /*
+      for( ; ; ){
+
+      }
+    第一个阶段：
+        变量初始化  var i = 0;  (只会执行一次)
+
+    第二个阶段：
+        条件判断  i < 3; (条件不成立就不进入循环体)
+    
+    第三个阶段：
+        当条件成立就进入循环体  lis[i].style.background = 'green'
+
+    第四个阶段：
+        铺垫下次循环条件（自增 或者 自减） i++  是i+1
+
+    第五个阶段：
+        重复第二阶段及之后的动作
+    
+    */
+    
+</script>
+</body>
+</html>

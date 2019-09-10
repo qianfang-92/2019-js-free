@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       forEach(callback,修改this指向)：
+            数组的循环
+              默认this是window
+        
+        callback(item,index,all);
+    
+    */
+
+    let ary = [1,4,2,3];
+
+    ary.forEach(function(item,index,all){
+        console.log(item,index,all);
+        console.log(this);
+    },document)
+
+    let arr = [1,4,'false'];
+
+    let b = arr.every(function(item,index,all){
+        console.log(item,index,all);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+      函数，变量提升，提到最上面
+
+      var：使用时，会变量提升，会走预解析过程
+           会把a提到前面，并先赋值undefined
+    
+    
+    */
+    console.log(a);  //->undefined
+    var a = 10;
+
+    /*
+     let 是不走变量提升的，有暂存死区，在定义的上方访问这个变量，会报错
+    
+    */
+    console.log(b); //->报错，前面的代码中没有b
+    let b = 10;
+
+    /*
+      var 声明变量，可以在同域下多次声明不同的值，下面的会覆盖上面的，但是let不允许同域下出现相同名字的变量，这个变量名也适用于函数
+    
+    */
+    var a = 20;  // ->a就变成20了
+    let b = 20; // ->报错，说b已经被赋值了
+
+    /*
+      ES6里把这个叫块
+      块  ：{} ，在块里写var a = 30;在块外面也可以访问到；但是在块里写let，在块外面就不能被访问了
+    */
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .active{
+            background:lightcoral;
+
+        }
+        .btn_color{
+            color:lightseagreen;
+        }
+    </style>
+</head>
+<body>
+    <button class="active btn_color">按钮</button>
+<script>
+    /*
+      函数的封装
+    
+    */
+    var active = document.getElementsByClassName('active')[0] //集合  这里存的是点击之前的地址
+    active.onclick = function() {
+        active.className = '';
+        alert(1);
+    }
+
+</script>
+</body>
+</html>

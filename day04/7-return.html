@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">0</button>
+    <input type="text" id="txt">
+<script>
+    /*
+      return是函数返回值   （小难点）
+
+      获取函数返回值：
+
+      1、函数名+括号，先调取函数，然后拿一个变量去接收，这个变量存储的就是函数返回值
+
+      2、函数名+括号，然后打印输出，也是打印函数返回值
+
+
+      在函数调用的时候，要注意有没有去使用函数返回值
+
+      函数内部的参数或者变量，是不能被外界访问到的 -----函数的一个特征
+
+      什么时候用return？
+           把函数内的运算结果，拿到函数外面使用时，就要使用return
+           
+           return下面的代码是不执行的，当某个条件成立时，不执行下面的代码，用return
+
+    */
+    function fn(a,b){
+        console.log(a+b)
+    }
+    fn(1,2);
+    let a = fn(1,2);
+    console.log(a); // ->3,undefined
+    console.log(fn(1,2)); // -> 3,undefined
+
+   //函数内部的参数或者变量，是不能被外界访问到的 -----函数的一个特征  ，要想把内部的结果被拿到，就是需要用return了
+   function fn(){
+       var a = 20;
+       return a;
+   }
+   console.log(fn()); //->20
+
+   //函数的目的是为了复用
+
+
+
+   let num = 0;
+
+   btn.onclick = function(){
+       num++;
+       if(num<10){
+         btn.innerHTML = '0' + num;
+       }else{
+           btn.innerHTML = '' + num;
+       }
+   }
+
+   function fn(a,b){
+       alert(a+b);
+       return;
+       alert(5);
+   }
+   fn(1,2); // -->3  return下面的代码是不执行的
+
+   function fn(){
+       for(let i = 0;i < 3;i++){
+           if(i == 1){
+               return;
+           }
+           alert(i);
+       }
+   }
+   fn();    //->只弹出0； 当i= 0 时，弹出0，自增后，i=1,满足if条件，return,不执行下面的代码，没有弹出东西
+
+   // 但是注意：return只在function里才可以用，没有函数时，它不能用
+
+   btn.onclick = function(){
+       if(txt.value === ''){
+           alert('请输入内容');
+           return;  // ->这里如果不加return,在弹出'请输入内容'后，还会弹出'执行'。虽然可以把下面的弹框放进else里，但是当有很多代码在中间时，直接放return会比较方便。
+       }
+       alert('执行');
+   }
+
+</script>
+</body>
+</html>

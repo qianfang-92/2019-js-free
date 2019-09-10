@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       toLowerCase：把字符串中英文字符换成小写的英文
+       toUpperCase :把字符串中小写的英文转成大写的英文
+    */
+    let str = 'weeywgdshfsjfbs';
+    console.log(str.toUpperCase());
+    //把font-size 转成fontSize
+
+    let atr2 = 'background-blend-mode';
+    let arr = atr2.split('-');
+    let temp = arr[0];
+    for(let i = 1; i < arr.length;i++) {
+       temp += arr[i][0].toUpperCase() + arr[i].substr(1)
+    }
+    console.log(temp);
+</script>
+</body>
+</html>

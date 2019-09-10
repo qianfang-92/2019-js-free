@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    全选:<input type="checkbox" id="all"/>
+    <div id="box">
+        爱好相同:<input type="checkbox"/>
+        性格相同:<input type="checkbox"/>
+        价值观相同:<input type="checkbox"/>
+    </div>
+<script>
+    /*
+        every(回调函数):
+            查看数组中的每个数据是否为指定条件，如果都符合条件结果会为true，
+            只要有一个不符合就为false
+
+            参数：一个函数
+            function(item,index,all){ return  指定的条件 }
+    */    
+
+    let ary = ['1',5,true];
+
+    // let b = ary.every(function(item,index,all){
+    //     console.log(item,index,all);//item:数组的每一项，index:这项数据的索引,all:整个数组
+    //     return !!item == true;
+
+    // });
+
+    let b = every(ary,(item)=>{
+        console.log(item)
+        return !!item == true;
+    })
+
+   
+
+
+    function every(ary,fn){
+        let state = true;
+        for(let i=0;i<ary.length;i++){
+            if(!fn(ary[i],i,ary)){
+                return false;
+            }
+        }
+        if(state){
+            return true;
+        }
+    }
+
+    // let b = ary.every(item=>{
+    //     return item;
+    // });
+    console.log(b);
+
+    // let b = ary.every(item=>!!item);
+
+   
+
+    // const checkbox = document.querySelectorAll('#box input');
+    // let arr = [0,0,0];
+    // for(var i=0;i<checkbox.length;i++){
+    //     checkbox[i].index = i;
+    //     checkbox[i].onclick = function(){
+    //         arr[this.index] = this.checked;
+    //         console.log(arr);
+    //         all.checked = arr.length===3 && arr.every(item=>item);
+    //         // console.log(this.checked);//勾选就是true，没勾选就是false
+    //     }
+    // }
+
+
+</script>
+</body>
+</html>

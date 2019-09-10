@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击添加1,当前数组:[]</button>
+    <button id="btn1">回退</button>
+<script>
+    /*
+        数组对象
+        Array
+
+        数组的方法目前是32个
+
+        方法：怎么用？
+             几个参数？
+             返回值是什么？
+             如何应用？
+             原理？
+
+        难点是记住了某些方法之后，遇到了问题忘了，要敲多想多练。
+
+        只要使用函数名或方法名加括号，就会获取这个函数或方法的返回值  不管函数还是方法，都有返回值
+
+        fn() {}   ：函数，前面没主，默认在window  
+
+        obj.fn()  :方法，前面有主，是谁的方法
+
+
+        push方法:
+            在数组的最后一位添加一个或多个数据并且返回的是新数组的长度
+            一个参数或者多个参数
+            返回值为新数组的长度
+            会改变原数组
+
+        返回值为1    ary.push(1) //[1]
+        返回值为5    ary.push(2,3,4,5,6)//[2,3,4,5,6]
+
+
+        pop方法(没有参数):
+            删除数组的最后一位数据，返回值为删除的那个数据
+
+    */
+    // console.log(Array)
+    // console.log(['珠','峰']);
+    // console.log(new Array('珠','峰'))
+
+    // console.dir([]);
+
+    // let ary = [0,1];
+
+    let ary = [1];
+    let num = 0;
+    btn.onclick = function(){
+        num ++;
+        // ary[ary.length] = num;
+       console.log( ary.push(num) );
+
+        btn.innerText = `点击添加1,当前数组:[${ary}]`
+        console.log(ary);
+    }
+
+
+    btn1.onclick = function(){
+        // let len = ary.length - 1;
+        // if(len < 0){
+        //     len = 0;
+        // }
+        // ary.length = len;
+
+        ary.pop();
+
+        btn.innerText = `点击添加1,当前数组:[${ary}]`
+    }
+
+
+    //[0] 
+    function push(ary,...arg){
+        //len存的是原数组一开始的长度
+        let len = ary.length;//0
+        for(let i=0;i<arg.length;i++){
+            // console.log(ary.length)
+            // ary[ary.length] = arg[i];
+            ary[len + i] = arg[i]; //[1,2]
+        }
+        return ary.length;
+    }
+
+    function pop(ary){
+        let last = ary[ary.length-1];
+        let len = ary.length-1;
+        ary.length = len<0?0:len;
+        return last;
+    }
+
+    console.log(pop(ary));
+
+
+    // console.log(push(ary,1,2,3,4,'yy',{}))
+
+    console.log(ary);//[1]
+
+
+
+</script>    
+</body>
+</html>

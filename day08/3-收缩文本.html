@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            width:300px;
+            border:2px solid firebrick;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+         <p id="p">  很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多</p>
+         <a href="javascript:;" id="a">>>展开</a>
+    </div>
+<script>
+    let html = p.innerText; //拿到所有文本
+
+    let sub = html.substr(0,24);
+
+    p.innerText = sub;
+    let state = true;// 当前是收缩
+
+    a.onclick = function() {
+      if(state) {
+          p.innerText = html;
+          a.innerText = '收缩';
+      }else {
+          p.innerText = sub;
+          a.innerText = '展开'
+      }
+      state = !state;
+    }
+
+</script>
+</body>
+</html>

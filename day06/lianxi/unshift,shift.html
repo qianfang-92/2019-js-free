@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+      unshift shift 在数组前面进行增减
+
+      unshift 在数组前面添加一个或者多个数据，返回值是新数组的长度
+
+      shift 删除数组的第一个数据，返回值是删除的那个数据
+    */
+    let ary = [1,2]
+
+    console.log(ary);
+
+    console.log(ary.unshift(-1,0));
+
+    console.log(ary.shift());
+
+    console.log(ary.push(1,4,5,ary.shift(3,5)));
+
+    //输出的是一个数字，是ary当前的长度，因为push返回值就是当前数组的长度6
+    
+</script>
+</body>
+</html>

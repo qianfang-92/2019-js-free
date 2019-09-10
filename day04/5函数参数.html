@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       参数：
+           在函数定义的时候，可以在括号中写一些"变量"，"变量"和"变量"间用逗号隔开
+
+           在函数定义时的参数叫做形参（形式上的参数）
+
+           在函数调用的时候，可以在括号中填入所有数据类型的数据，数据之间用逗号隔开，其实也就是把形参具体化，所以叫做实参，实参与形参是一一对应的，形参就相当于被赋值了与之顺序相同的实参，如果有了形参，没有实参与之对应，输出这个形参，就相当于没有被定义，是undefined。形参与实参的关系有点像属性名与属性值的关系。
+    */
+    function fn(a,b){
+        console.log(a,b);
+    }
+    fn(1); // ->1 undefined   因为b没有被传实参。
+
+    function fn(a){
+       console.log(a);
+    }
+    fn(1);
+
+
+function fn(obj){
+    obj.callback();// 回调函数，钩子函数,生命周期函数
+}
+fn({
+    obj:function(){
+        alert(1);
+    }
+})
+
+/*
+  ES6里面，函数的参数是可以被赋值为一个默认值的，这个值可以是任意的数据。
+  
+  这叫提前赋值
+  
+*/
+function fn(a,b=5){
+    console.log(b);  // ->5
+}
+fn(1);
+
+// 想取除了第一个参数之后的全部实参
+/*
+   函数的剩余运算符
+      ...自定义的名字    输出这个自定义名字，能看出来它就是一个真数组
+
+*/
+
+function fn(a,...arg){   //函数的剩余运算符，这其中的arg是一个真数组，可以自定义名字，也可以把形参a删掉，就是取所有的实参了  fn(...arg){}
+    console.log(a,arg);
+}
+fn(12,4,2,43,4);
+
+
+
+let a = 10;
+function fn(a){
+    a(function(b){
+       console.log(b);   // ->输出的就是 function(b){console.log(b)};
+    });
+
+}
+
+function fn2(a){
+   a(a);
+}
+fn(fn2);
+
+    
+</script>  
+</body>
+</html>

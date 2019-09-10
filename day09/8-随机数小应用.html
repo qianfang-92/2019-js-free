@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            border:2px solid firebrick;
+            border-radius:10px;
+            margin:100px 300px;
+            font-size:16px;
+            display:inline-block;
+            padding:10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+ 23
+    </div>
+    <button id="btn">停止</button>
+<script>
+    /*
+       点击按钮的时候，随机取出一个字符，然后拼接str2
+
+       如果在str2中有重复的，就再次取字符
+    */
+let str = '2138643386543jgdsjbhcjsdhbkjdhjkchjWEDUHKAJHDKWEWKDHKJH';
+let str2 = '';
+box.onclick = fn;
+function fn() {
+    
+      str2 = '';
+    while(str2.length < 5) {
+        let s = str[Math.floor(Math.random() * str.length)];
+        if(!str2.includes(s)) {
+            str2 += s;
+        }
+    }
+    box.innerHTML = str2;
+
+}
+let ti = setInterval(fn,100)
+btn.onclick = function() {
+    clearInterval(ti);
+    box.innerHTML = 'jdhsg';
+}
+</script>
+</body>
+</html>

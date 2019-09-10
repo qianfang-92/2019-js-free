@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        forEach(callback,修改this指向):
+            数组的循环
+
+                默认this为window
+
+        callback(item,index,all)
+
+        返回值是undefined
+    */    
+
+    let arr = [1,2,3,4];
+
+    arr.forEach(function(item,index,all){
+        console.log(item,index,all);
+        console.log(this);
+    },document);
+
+    // let ary = [1,5,3,'8',[null]];
+
+    // ary.forEach(function(a,b){
+    //     console.log(b)
+    // })    // a,b,c 都是形参，系统规定分别代表 每一项，索引，整个数组  如果需要console.log索引，那么a可以不打印，但是形参要放在第一位占位
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" index="1"></div>
+    <img src="" alt="">
+<script>
+   /*
+     行间属性操作
+         它可以操作img的src，获取了这个属性后可以随意操作
+     getAttribute('属性名')  获取指定属性的值
+
+    setAttribute(属性名，属性值)
+
+    removeAttribute(属性名)  删除指定属性
+
+    用Attribute系列操作的属性就使用Attribute系列获取
+
+    使用对象下的方式操作的属性就使用对象下的方式去获取
+
+    系统内置的默认属性例外（通过attribute改变的默认属性，也可以改变对象下的属性）
+
+    对象的属性空间和自定义行间属性空间不是一个空间；
+   */
+  console.log(getAttribute('index'));
+
+  box.removeAttribute('index');
+
+  //编辑手机短信的那个作业里，img的src属性也可以用Attribute这个来获取属性，这样就不是绝对路径，就可以操作这个属性了
+
+  //index 是自定义属性，不放在box这个div的第一层属性里，是放在attributes里的，所以
+  console.log(box.index); //->undefined  在box下找index这个属性是没有的
+
+  //所以：
+  box.index = 2 ;// 此时也不是改变attributes下的Index属性，而是在box下增加了一个index属性，值为2
+  console.log(box.getAttribute('index')) ; //->还是1；这个Index还是Attributes下的index
+
+
+</script>
+</body>
+</html>

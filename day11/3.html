@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function back (obj) {
+        if (typeof obj === 'string') {
+            return (obj + obj);
+        } else if (typeof obj === 'number') {
+            return (obj * obj);
+        } else if (typeof obj === 'boolean') {
+            return (!obj);
+        }
+    }
+
+    console.log(back (true));
+
+    let max = -Infinity;
+
+    function maxNumber (ary) {
+        for (let i = 0; i < ary.length; i++) {
+            if (max < ary[i]) {
+                max = ary[i];
+            }
+        }
+        return max;
+    }
+    console.log(maxNumber ([1,5,34,76,8]));
+
+    
+    // function bubbleSort (ary) {
+    //     for (let i = 0; i < ary.length; i++) {
+    //         for (let j = i + 1; j < ary.length; j++) {
+    //             if (ary[i] > ary[j]) {
+    //                 let a = ary[i];
+    //                 ary[i] = ary[j];
+    //                 ary[j] = a;
+    //             }
+    //         }
+    //     }
+    //     return ary;
+    // }
+    // console.log(bubbleSort (ary));
+    /*  */
+    
+    let ary = [1,4,7,2,5,34,6,3,7,8]
+
+    function quickSort (ary) {
+        if (ary.length == 0 || ary.length == 1)return ary;
+        let data = ary.pop();
+        let left = [];
+        let right = [];
+        while (ary.length) {
+            let d = ary.pop();
+            if (d < data) {
+                left.push(d);
+            } else {
+                right.push(d);
+            }
+        }
+        return quickSort(left).concat(data,quickSort(right));
+    }
+    console.log(quickSort(ary));
+</script>
+</body>
+</html>

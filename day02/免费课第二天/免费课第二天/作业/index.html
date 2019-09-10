@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt1" /> 
+    <select name="" id="s1">
+        <option >+</option>
+        <option >-</option>
+        <option >*</option>
+        <option >/</option>
+        <option >%</option>
+    </select>
+    <input type="text" id="txt2"/> = 
+    <input type="text" id="res"/> 
+    <input type="button" value="计算" id="btn"/> 
+<script>
+    /*
+      eval()  能把字符串尽量转成js能够运行的代码
+    
+    */
+  btn.onclick = function() {
+    //  res.value = eval(txt1.value+s1.value+txt2.value);
+
+      res.value = new Function('','return '+txt1.value + s1.value + txt2.value)();
+  }
+
+
+</script>
+
+</body>
+</html>

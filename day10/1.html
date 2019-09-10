@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //shift原码
+    // function shift(ary) {
+    //    let first = ary[0];
+    //    ary.reverse();
+    //    ary.length --;
+    //    ary.reverse();
+    //    return first;
+    // }
+     
+    // //unshift
+    // function unshift(ary,...arg) {
+    //     ary.reverse();
+    //     arg.reverse();
+    //     let arr = ary.concat(arg);
+    //     arr.reverse();
+    //     for(let i = 0; i < arr.length;i++) {
+    //         ary[i] = arr[i];
+    //     }
+    //     return arr.length;
+    // }
+
+    // //unshift
+    // function shift(ary,...arg) {
+    //     let arr = [...arg,...ary];
+    //     for(let i = 0; i < arr.length;i++) {
+    //         ary[i] = arr[i];
+    //     }
+    //     return arr.length;
+    // }
+    let ary = [1,3,4];
+    ary.splice(2,0,5);
+    console.log(ary);  // ->[1,3,5,4]  5这个数字占据了4的位置，成了i = 2 的数字
+
+    // debugger 断点查看
+
+</script>
+</body>
+</html>

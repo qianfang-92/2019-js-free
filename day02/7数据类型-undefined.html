@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+   undefined  未定义
+   1、声明了一个变量，但是没有赋值，就是undefined
+   2、函数的默认返回值为undefined
+   3、引用数据类型没有某个指定属性就是undefined
+   4、基本类型（除了undefined null）自定义一个属性或方法是undefined
+   5、有形参没有实参是undefined
+*/ 
+let obj = new Date;
+obj.name = 'zhugang';
+console.log(obj.name);
+
+
+let obj2 = '';
+obj2.name = 'shuju';
+console.log(obj2.name);
+
+function fn(){
+   console.log(1+2);
+}
+let f = fn();
+console.log(f);
+console.log(fn()); // ->3 undefined  
+
+let a;
+console.log(a);
+
+function fn2(){
+
+}
+console.log(fn2());
+let e = {
+
+}
+console.log(e.name);
+
+let d = 'zhufeng';
+d.name = 'suiyi';
+console.log(d.name);
+console.dir(d);
+
+// 因为undefined是从 null派生出来的，ECMAScript把它们定义为相等的:可能面试问你，直接说ECMA规定的
+console.log(undefined == null); // ->true 
+
+// === 不但要比较值，还要比较类型
+console.log('2' == 2);// ->ture  比较时会转换两边的类型，进行比较
+console.log('2' === 2);  // ->false  这种等于也叫做全等
+console.log(undefined === null);  // ->false 
+
+</script>
+</body>
+</html>

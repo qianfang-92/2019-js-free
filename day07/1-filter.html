@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+      filter(function(item,index,all){
+          return true(条件)
+      }) 过滤
+          返回一组在回调函数中条件成立的数据，组成一个新的数组，不改变原数组
+    */
+    let ary = [1,4,2,4,3,53,5,54,2]; //想找出大于5的数字，并放到一个数组中
+
+    let ary2 = [];
+
+    // ary.forEach(function(item){if(item > 5){ary2.push(item)}});
+    // console.log(ary2);
+
+    console.log(ary.filter(item => item > 5));
+    console.log(ary);
+
+</script>
+</body>
+</html>

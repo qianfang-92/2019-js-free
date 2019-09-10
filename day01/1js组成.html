@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width:100px;
+            height:100px;
+            background:lightblue;
+        }
+        #box2{
+            width:200px;
+            height:200px;
+            background:lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="box" onclick="alert('哈哈')"> -->
+    </div>
+    <div id="box2"></div>
+    <!-- <script>
+        /* 通过id的方式去获取元素：
+             css:#
+             js:document.getElementById("box")
+        */ 
+        document.getElementById('box');
+        // console.log(document.getElementById('box'));
+        console.dir(document.getElementById('box'));
+    </script> -->
+    
+    
+    <script>
+        /*
+      多行注释
+      当点击box2这个元素的时候做出一件弹出珠峰的一个弹框
+      alert会阻塞下面的代码
+    */
+
+        document.getElementById('box2').onclick=function(){
+            alert('珠峰');
+            console.log(1+2);
+        };
+
+        // 定义函数
+        function fn(){
+            alert('珠峰');
+        }
+
+        //函数的调用
+        fn();
+    </script>
+</body>
+</html>

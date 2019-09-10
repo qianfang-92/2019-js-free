@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button >按钮一</button>
+    <button >按钮二</button>
+    <button >按钮三</button>
+    <div id="box">对应按钮一</div>
+<script>
+    let ary = ['对应按钮一','对应按钮二','对应按钮三']
+   /*
+    1、获取所有button
+    2、给所有Button添加点击事件
+    3、点第一个按钮，对应数组的第一项
+   
+   */
+   /*
+      for循环非常快，在点击时，循环已经结束了
+
+      在点击的时候，就会去弹出最终的i，循环之后的结果i
+   */
+   // 主路线
+   let btns = document.querySelelctorAll('button');
+   for(var i = 0,len = btns.length;i<len;i++){
+       console.log(i); //->这里捕捉到了i的0，1，2
+ //      给每个按钮一个属性index
+       btns[i].index = i;
+  // 异步队列
+       btns[i].onclick = function() {
+           alert(i);   //这时，函数里面没有i，它就往外找，var i=0 ,把它提升出去，是undefined，但是循环很快，i变为3，所以这里弹出的是3
+           alert(this.index); //这样，this是当前的按钮,this 就是btns[i]
+           alert(ary[this.index]);
+           box.innerHTML = ary[this.index];
+
+       }
+   }
+</script>
+</body>
+</html>

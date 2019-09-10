@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+      split('-')
+         把字符串分割为数组，分隔符为括号里的参数，如果要把字符串中每个字符串分割后放在数组中，至少()里要写空字符串
+
+         只有空字符串切空字符串，返回值才会是空数组
+
+         别的如果自己切自己，得到的是有两个空字符串的数组
+
+         一般split和join会搭配用
+    */
+    let str = '珠;峰;培;训';
+
+    console.log(str.split(';')); // ->  ["珠", "峰", "培", "训"]   它是根据字符串中各个字符串之间的分隔符来查的，字符串中每个字之间的是；那么它在split()括号里加；就可以把;当分隔符；
+
+    let str2 = '';
+    console.log(str2.split(''));//-> []
+
+    let str3 = '住'
+    console.log(str3.split('住')); // -> ['','']
+
+    //把下面的字符串颠倒顺序
+
+    let str4 = '训培峰珠';
+
+    console.log(((str4.split('')).reverse()).join(''));
+
+</script>
+</body>
+</html>

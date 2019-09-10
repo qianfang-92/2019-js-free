@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    全选：<input type="checkbox">
+    <div id="box">
+        爱好 <input type="checkbox">
+        性格 <input type="checkbox">
+        价值观 <input type="checkbox">
+    </div>
+<script>
+    /*
+      every(回调函数)
+          查看数组中的每个数据，指定条件是否成立，如果都成立，结果为true，如果有一个不是，结果为false
+          返回值是布尔值
+    
+    */
+    let ary = [1,1,0];
+    // let b = ary.every(function(item,index,all){
+    //     console.log(item,index,all); //item:数组的每一项，index：这项数据的索引，all：整个数组
+    //     return item == true;
+    // })
+
+    let b = ary.every(item => !!item);
+
+    console.log(b);
+
+    const checkbox = document.querySelectorAll('#box input')
+    
+</script> 
+</body>
+</html>

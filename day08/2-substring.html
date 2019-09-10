@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       substring(起始位置，结束位置但不包括这个位置)
+           截取字符串中指定位置的字符
+           第一个参数不能为负数，不然自动转为0
+           如果第一位参数比第二位参数大，它会自动反转一下这两个参数的顺序，保证可以截取
+
+        substr(起始位置，截取几个)
+
+        charCodeAt 把字符串转成unicode编码值
+
+        includes('指定字符串')
+            指定字符是否在整个字符串中出现，如果出现了，就返回true，如果没有出现就返回false
+
+        indexOf(指定字符，从第几位开始查) 
+           返回指定字符的索引    从前往后找
+        lastIndexOf(指定字符，从第几位开始)
+           返回指定字符的索引    从后往前找
+    */
+    let str = 'asbajdsakbdssdbsbcs'
+    console.log(str.substring(4,7));
+    console.log(str); //没改变
+    console.log(str.substr(4,3));
+
+    //如果只传一个参数，那么就是从起始位置到最后选取
+
+    console.log('abc'.charCodeAt());
+
+    let str2 = 'txt.html.css.js';// 找到当前文件是什么类型的文件
+    console.log(str2.substr(str2.lastIndexOf('.')+1));
+</script>
+</body>
+</html>

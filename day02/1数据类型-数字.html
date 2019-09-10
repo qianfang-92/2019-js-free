@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // NaN 非法数字
+    // Infinity 正无穷大的数字，属于数字数据类型
+    console.log(12+ (+'12'));
+    console.log(12-'2');
+    console.log(12-'px');
+    console.log(12*'2');
+    console.log(12*'px');
+    console.log(12/'2');
+    console.log(12%2);
+    console.log(2%12);  //->2
+    console.log(3%11);  // ->3  
+    // 用小的数字去% 大的数字，得到的是小的数字本身，这是因为小的数字去除以大的数字时，得到的是0，余的则就是小的数字本身。
+    console.log(12+'12px'); //1212px;
+
+    console.log(parseInt('NaN')); // ->NaN
+    console.log(parseInt(''));  // -> NaN
+    console.log(parseInt('Infinity')); // ->NaN
+    console.log(parseInt(Infinity)); // ->NaN
+    console.log(parseInt([]));  // ->NaN
+    console.log(parseInt([6,2,3]));  // ->6  第一个数字
+    console.log(parseInt(['px',2,3])); // ->NaN 根据[]里面第一个内容判断，判断原则也是之前的原则
+    console.log(parseInt(['12px',2])); // ->12
+    console.log(parseInt({}));  // ->   NaN
+    console.log(parseInt(new Date)); // ->NaN
+
+    console.log(parseFloat('12.3px'));  // ->12.3  与parseInt不同的是可以保留小数，而且它只有一个参数，没有第二个参数
+    console.log(parseFloat(['12.6px',2,3]));  // ->12.6
+
+    console.log(Number('12'));  // ->12
+    console.log(Number('')); // -> 0
+    console.log(Number('') == parseInt('')); // -> false   == 就是我们普通意义上的比较
+    console.log(Number([]));  // ->0  
+    console.log(Number({}));  //->NaN
+    console.log(Number(null)); //->0
+    console.log(Number(undefined)); //->NaN
+    console.log(Number('Infinity'));  // ->Infinity
+    console.log(Number(Infinity)); // ->Infinity
+    console.log(Number(true)); // ->1
+    console.log(Number(false)); // ->0
+
+    let num = 12.5462;
+    console.log(num.toFixed(2));  // ->'12.55' 四舍五入了，而且输出的是字符串，toFixed(保留小数的位数)
+    console.log(num.toFixed(3));
+    </script>
+</body>
+</html>

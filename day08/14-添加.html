@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"><button id="btn">发送</button>
+    <ul id="ul">
+
+    </ul>
+<script>
+    /*
+       parent.insertBefore(new,old)  ：在旧的前面添加新的
+
+       parent.removeChild(ele)  ：删除父级的子元素
+    */
+   btn.onclick = function() {
+       let val = txt.value;
+       let li = document.createElement('li');
+       li.innerText = val;
+    //    ul.appenChild(li);
+    ul.insertBefore(li,ul.children[0]);
+       txt.value = '';
+   }
+</script>
+</body>
+</html>

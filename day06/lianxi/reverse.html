@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+ /*
+   reverse 数组翻转   改变原数组
+ */  
+
+ let ary = [9,4,2,4,1,1,4,4,5];
+ ary.reverse();
+ console.log(ary.reverse()); //这时reverse，因为上一行已经reverse了，所以现在又回去了，输出的是原来顺序的数组
+ console.log(ary == ary.reverse());  //对象和对象比较，比较的是空间地址
+</script> 
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+#box{
+    width:200px;
+    height: 50px;
+    border:1px solid #000;
+}
+.btns_box{
+    display: none;
+}
+#btn{
+    height:50px;
+    float:right;
+}
+#txt{
+    width:150px;
+    float: left;
+    line-height: 50px;
+}
+#txt_box{
+    display: block;
+}
+</style>
+</head>
+<body>
+    <div id="box">
+        <div id="txt_box">
+            <div id="txt">好好学习,天天向上</div>
+            <button id="btn">修改</button>
+        </div>
+        <div class="btns_box">
+            <input id="txt2" value="好好学习,天天向上"/>
+            <button id ="cancle">取消</button>
+            <button id="sure">确定</button>
+        </div>
+    </div>
+<script>
+    const btns_box = document.querySelector('.btns_box');
+    btn.onclick = function() {
+        txt_box.style.display = 'none';
+        btns_box.style.display = 'block';
+        txt2.value = '';
+    }
+    cancle.onclick = function() {
+          txt_box.style.display = 'block';
+          btns_box.style.display = 'none';
+    }
+    sure.onclick = function() {
+        txt_box.style.display = 'block';
+        btns_box.style.display = 'none';
+        txt.innerText = txt2.value;
+    }
+
+</script>
+</body>
+</html>

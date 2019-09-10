@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       倒计时：未来的时间 - 现在的时间  = 剩下的时间
+
+       服务器时间一般是按照秒来计算的
+            如果在工作中设置完时间之后显示1970年等，就说明给的时间是用秒来计算，这时就要乘以1000来换算
+    */
+    //未来的时间
+    let time = new Date('2019 9 6 12:55:00'); // 未来工作一定要获取服务器的时间，来设置一个安全的时间
+
+    //当前时间
+    let now = new Date();
+
+    console.log(time - now);  //得到的是时间戳，毫秒单位
+
+    //先除以1000，把毫秒转成秒
+
+    let t = (time - now)/1000;
+
+    let mi = Math.floor(t/60); //得到分钟数
+    
+    let se = Math.floor(t%60); // 得到秒数
+
+    console.log(mi + '分' + se +'秒');
+
+    //毫秒转成秒，要除以1000；
+
+    //把服务器的时间放在Date里时要注意服务器的时间是秒来计算的，但是这里的时间是用毫秒计算的
+
+    /*
+       一天有86400秒
+
+    */
+    
+</script>
+</body>
+</html>

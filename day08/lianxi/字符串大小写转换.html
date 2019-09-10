@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       toLowerCase   小写
+       toUpperCase 大写
+    */
+    let str = 'sdhgshfgdss'
+    console.log(str.toUpperCase());
+    console.log(str);//原字符串没变
+    console.log(str.toUpperCase().toLowerCase());
+
+    let str2 = 'background-blend-mode-dsds-hahs-djsak:';
+    let arr = str2.split('-');
+    console.log(arr);
+    let temp = arr[0];
+    for(let i = 1; i < arr.length; i++) {
+        temp += arr[i][0].toUpperCase() + arr[i].substr(1)
+    }
+    console.log(temp);
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       find:
+          找到回调函数中条件符合的一个数据并返回，如果没有找到为undefined
+        
+        find(function(item,index,all){
+            return true(条件);
+        })
+
+        findIndex:
+           找到回调函数中条件符合的数据索引，如果没有找到这个数据，返回索引为-1
+
+        findIndex(function(item,index,all){
+            return true(条件);
+        })
+    
+    */
+     let ary = [true,false,1,6,'9',[null]];
+
+     console.log(ary.find(item => item ==='10')); // undefined
+
+     console.log(ary.findIndex(item => item === '9'));
+
+     //find  findIndex 原理
+
+     function find(ary,data) {
+         for(let i = 0; i < ary.length; i++) {
+             if(ary[i] === data) {
+                 return data;
+             }
+         }
+         return null;
+     }
+     console.log(find(ary,'9'));
+
+     function findIndex(ary,data) {
+         for(let i = 0;i < ary.length;i++) {
+             if(ary[i] === data) {
+                 return i;
+             }
+         }
+         return -1;
+     }
+     console.log(findIndex(ary,'9'));
+
+</script>
+</body>
+</html>

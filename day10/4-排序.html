@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       排序：
+
+          sort排序
+
+          冒泡排序
+             [1,4,6,9,2,57,3]
+    */
+    let ary = [1,4,6,9,2,57,3];
+    for(let i = 0; i < ary.length; i++) {
+        for(let j = i+1; j < ary.length; j++) {
+            if(ary[i] > ary[j]) {
+                let a= ary[i] ;
+                ary[i] = ary[j];
+                ary[j] =a;
+            }
+        }
+    }
+
+    /*
+       快速排序：
+        
+    */
+    
+    console.log(ary);
+</script>
+</body>
+</html>

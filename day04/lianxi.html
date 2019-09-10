@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       return是函数的返回值
+
+       获取函数返回值：
+
+       1、函数名+小括号，先调取函数，然后用一个变量去接收
+    
+    
+    */
+    function fn() {
+        console.log(1+3);
+    }
+    let ff = fn();
+    console.log(ff);
+    /*
+      2、函数名+小括号，然后打印输出，也是打印这个函数的返回值
+
+      在函数调用的时候，要注意有没有去使用函数返回值
+
+      函数的一个特征：函数内部的参数或变量，是不能被外界访问到的
+
+      什么时候用return？
+         
+         把函数内的运算结果，拿到函数外面使用时，就要使用return
+
+         return下面的代码是不执行的，所以当函数里面有if条件，某个条件成立时，不执行下面的所有代码，用return
+
+
+      函数的使用目的是为了复用
+    
+    
+    */
+
+    /*
+      document.querySelector 获取一个元素，就算后面写的是一组，也是获取的第一个元素
+
+      document.querySelectorAll 获取一堆元素。后面根据类型可以写很多，比如按id获取，#id名，按class类名 .类型，按标签名等
+
+      这种All方式获取的，就算只有一个元素，也是一个集合，所以在对这个元素进行操作时，需要在集合后加下标
+    */
+    // 可以复用的获取元素：
+     
+     function $(ele) {
+         return document.querySlectorAll(ele);
+     }
+     console.log($('#uli')[0]);
+    
+    /*
+      函数的三种形态（角色）
+
+         1、函数
+
+         2、Function的实例
+
+         3、构造函数
+    
+    */
+
+    /*
+      隔行变色
+    */
+    
+</script>
+</body>
+</html>

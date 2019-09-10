@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function fn(x,y){
+    console.log(x+y);//7
+    return function y(){
+        // console.log(x);//1
+        console.log(y);// 这里y,因为这个函数体内没有y，所以向外找y,然后此时y不是外面的y，而是函数名Y,所以打印出来是一个函数
+        console.log(x*y);
+    }
+}
+let y = fn(1,6); 
+console.log(y);  //->7 undefined
+y(); //->6
+// console.log(y());  //->6 undefined
+
+alert(alert(alert(1))); 
+window.alert = function(a){}  // 本来window全局作用域中有alert这个属性，而且这个属性值是一个能弹出东西的函数，现在这个等于又给alert 赋值了新的函数，如果这个赋值放在22行上面，那么alert的函数就被覆盖了，就不能弹出任何东西，会被报错
+// 弹两次，第一次是1，第二次是alert alert的返回值
+//所以第二次的alert的值是undefined
+</script>
+</body>
+</html>

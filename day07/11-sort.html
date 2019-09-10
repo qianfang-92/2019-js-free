@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       sort:
+          给数组排序，默认排序顺序是按照unicode字符串来排序的，所以10会排放在2前面
+
+       sort(callback)
+
+       callback(a,b)  a是数组中的某一个，b也是数组中的某一个；callback必须返回一个数字
+
+       内部原理：  callback 返回数字，正数就交换位置，
+                                    负数就不交换位置
+                                    0就无所谓
+    
+       
+    
+    */
+    let ary = [1,5,3,8,2,5,7,0];
+
+    ary.sort();
+
+    ary.sort(function(a,b){
+        return a-b;  // 从小到大排
+    })
+    //如果数组中有不是纯数字的，那么可以给a,b加一个parseInt，使返回值成为一个数字
+    //也允许自定义的排列，传入回调函数
+
+    console.log(ary);
+
+</script>
+</body>
+</html>

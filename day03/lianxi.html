@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text">
+    <input type="button" value="确定" id="btn">
+<script>
+/*
+   js是编程语言，编程语言就要有逻辑判断
+   if 如果
+
+    if(条件){
+
+    }
+     
+    这个条件会转化为布尔值，如果这个布尔值是true，就进入大括号里
+
+写法一：
+    if(条件){
+        //成立
+    }else{
+        //不成立
+    }
+
+写法二：
+    if(条件一){
+
+    }else if(条件二){
+
+    }
+
+第三种写法：
+    if(条件一){
+
+    }else if(条件二){
+
+    }else{
+
+    }
+
+*/
+
+/*
+  switch（相同的变量）  用于一个相同的变量有着不同的结果来进行判断
+  case 成立的条件：
+      语句
+    break
+    default:
+    默认语句
+    break
+
+当一个语句执行完成之后要用break去跳出判断，如果不加break会向下穿透。
+
+
+
+*/
+// switch (st) {
+// case 'zhufeng':
+//     console.log('hao');
+//     break;
+// case 'zhugang':
+//     console.log('zai');
+// default:
+//    console.log('doubushi')
+//    break;
+
+// }
+
+/*
+   字符串与字符串比较，比的是unicode
+   字符串与数字比较，比较的是数字
+   对象与对象比较，比较的是地址
+   null与undefined和别的数据类型不相等
+   NaN不等于NaN
+   对象和数字进行比较，对象会先toString，再转换为数字NaN
+
+
+   数字和布尔值进行比较，布尔值会先转换成数字，
+
+
+   
+
+*/
+console.log(parseFloat('0') == '');
+
+
+/*
+    并且 &&
+    或者 ||
+    三元运算符
+    ？  ：  
+    if('a' != ''){
+        if('b' != ''){
+
+        }
+    }
+    可以改写成：
+    if('a' != '' && 'b' != ''){
+
+    }
+
+    (ff === 'function') && fn()
+
+
+
+
+*/
+// let n = false || 5 && 8 && 6 && (1-1) || true || null || 0 && '';
+// console.log(n);
+let n = false ||  6 && (1-1) && undefined || null && [] && '' || {} && true;
+console.log(n);
+/*
+   循环：重复多次做一件事，或者做有规律的事，就是循环
+
+   document.getElementsByTagName('li');获取一堆li，获取的是一个类数组（集合）
+   类数组：
+       类似于数组，有相同的下标和length，但没有数组的方法
+
+    注意：
+        通过批量获取元素的方法获取元素，是一个集合，就算元素只有一个也是一个集合
+        要使用集合中的某个元素，一定要加下标
+    
+    for循环
+        第一个阶段，变量初始化阶段，只执行一次
+        第二个阶段，条件判断阶段，不成立就不进入循环体
+        第三个阶段，条件成立，进入循环体
+        第四个阶段，自增或自减，铺垫下次
+        第五个阶段，条件判断，是否进入循环体
+
+    for套for循环的运行机制
+      先执行一次大循环，再执行完小循环，然后再执行一次大循环，再执行完小循环
+
+    注意：
+       循环是单纯的for套for时，变量如果是var声明的，嵌套for的变量和外面的for的变量不能重名
+
+    在for循环里面使用
+       跳过：
+           continue 
+               当某个条件成立的时候就跳过本次循环，进行下次循环
+        跳出：
+            break
+                当某个条件成立，跳出循环体，后面的循环中断
+    
+    typeof类型判断，字符串，数字，布尔值，undefined
+
+    但是null在typeof中是object，Array也检测不出来
+
+    console.log(Object.prototype.toString.call(ary) == '[object Array]')
+
+*/
+</script> 
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        /*
+           倒计时：
+               未来的时间 - 现在的时间 = 剩下多少时间
+
+               服务器时间一般是按照秒来计算的，如果在工作中设置完时间之后显示1970，就说明要把拿到的数字*1000，把秒转换为毫秒
+        */
+
+        //未来的时间
+        let time = new Date('2019 9 8 09:00:12'); //未来工作一定要获取服务器的时间，来设置一个安全的时间
+
+        //当前时间
+        let now = new Date();
+
+        console.log(time.getTime());
+        console.log(+time);
+
+        /*
+           1、先除以1000把毫秒转成秒
+
+           2、一分钟 60秒  一小时3600秒  一天86400秒
+
+        */
+    //    let t = Math.floor((time - now)/1000);
+    //    console.log(t);
+    //    let day = Math.floor(t/86400);
+    //    console.log(day);
+    //    t %= 86400;
+    //    console.log(t);
+    //    let h = Math.floor(t/3600);
+    //    t %= 3600;
+    //    console.log(h);
+    //    let min = Math.floor(t/60);
+    //    t %= 60;
+
+    //    console.log(day + '天' + h + '时' + min + '分' + t + '秒');
+    
+
+    </script>
+</body>
+</html>

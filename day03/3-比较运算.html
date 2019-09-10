@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+      在js中一个等号代表赋值
+
+      两个等号是比较
+            在比较之前会把比较的两边的数据类型转换成一样的；
+            它只比较值，不比较类型    1 == '1'  //->true
+            
+      三个等号代表全比较
+         不但要比较值，还要比较数据类型，它没有数据类型的转换，性能更高，
+
+      != 不等于   就是把两个等号的第一个等号改成!
+       
+      !== 不全等于   就是把全等的第一个等号改成!
+      
+    */
+    console.log(1 == '1px'); //->false
+    console.log(1 == true);  //->true
+    console.log(0 == false); // ->true   数字跟布尔值进行比较的时候，布尔值会转成数字再进行比较
+    console.log([] == {}); //->false;
+    console.log(1 == null); // ->false,  null和undefined不等于别的数据类型
+    console.log(1 == [1,2,4]);// ->false
+    console.log(0 == {}); // 对象和数字进行比较时，会先toString，再转成数字，成为[object object]，最后成为NaN，用Number进行数字转换
+    console.log({} == {}); // 对象和对象进行比较的时候，比较的是地址，所以一个地址不等于另一个地址，所以是false
+    console.log(0 == ''); //空字符串会先转为数字，是0，所以等于0
+    console.log('0' == ''); //->false 因为字符串和字符串相比较不会转为数字，而是它们之间比较用unicode编码进行比较
+    console.log('21' > '2000'); // ->true 它是一位一位的比，第一位都是2，第二位左边是1，右边是0，所以左边大于右边
+    console.log(NaN == NaN); //->false
+    console.log(false == []); // ->true  布尔值和对象比，转成对象
+    
+
+
+</script>
+</body>
+</html>

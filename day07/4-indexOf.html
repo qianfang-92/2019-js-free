@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       indexOf
+           两个参数
+           indexOf(找谁，从第几个开始)
+           返回指定的某个数据的索引，如果没有这个数据，返回-1
+
+        lastIndexOf:
+            两个参数，
+            lastIndexOf(找谁，从第几个开始)
+            返回指定的某个数据的索引，但是索引是从后往前的
+    
+    */
+    let ary = [1,true,false,'4',9,[null],false,9,1];
+
+   console.log(ary.indexOf(false)) ;//返回false 的索引  1  ,而且从前往后找，是第一个false的索引
+
+   console.log(ary.indexOf(9,5));  // 7
+
+   console.log(ary.lastIndexOf(9));  //返回9的索引，而且是从后往前找，找的是最后那个9的索引   6
+
+   console.log(ary.lastIndexOf(1,4)); //从后往前找，并且从索引为4的数据开始往前找，这时最后的1就找不到了 ，就是 0
+</script>
+</body>
+</html>

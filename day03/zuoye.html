@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="num1">
+    <select name="" id="sel">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="num2"> =
+    <input type="text" id="res">
+    <button id="btn">计算</button>
+    <script>
+        /*
+        内容不能为空
+        内容必须能转化为数字的字符串
+        除数和余数都不能为0
+        保留两位小数
+        如果小于10就补0，大于10
+        
+        */
+        btn.onclick = function () {
+            let nv1 = num1.value;
+            let nv2 = num2.value;
+            let sv = sel.value;
+
+            if (nv1 != '') {
+                if (nv2 != '') {
+                    if (!isNaN(parseFloat(nv1))) {
+                        if (!isNaN(parseFloat(nv2))) {
+                            nv1 = parseFloat(nv1);
+                            nv2 = parseFloat(nv2);
+                            let count = 0;
+                            if (sv == '+') {
+                                count = nv1 + nv2;
+                            } else if (sv == '-') {
+                                count = nv1 - nv2;
+                            } else if (sv == '*') {
+                                count = nv1 * nv2;
+                            } else if (sv == '/') {
+                                if (parseFloat(nv2) != 0) {
+                                    count = nv1 / nv2;
+                                } else {
+                                    alert('第二个值不能为0')
+                                }
+
+                            } else if (sv == '%') {
+                                if (parseFloat(nv2) != 0) {
+                                    count = nv1 % nv2
+                                } else {
+                                    alert('第二个值不能为0')
+                                }
+
+                            }
+                            if (count < 10) {
+                                if (count > 0) {
+                                    res.value = '0' + count.toFixed(2);
+                                } else {
+                                    res.value = count.toFixed(2);
+                                }
+
+                            } else {
+                                res.value = count.toFixed(2);
+                            }
+
+                        }
+                    }
+                }
+                else {
+                    alert('第二个值不能为空')
+                }
+            }
+            else {
+                alert('第一个值不能为空');
+            }
+        }
+    </script>
+</body>
+
+</html>

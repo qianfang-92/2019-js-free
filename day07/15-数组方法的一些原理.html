@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       shift 
+       unshift
+    */
+    let ary = [1,4,2,4]
+
+    // function unshift(ary,...arg) {
+    //  ary[ary.length] = arg;
+    //  //从后往前循环，把最后一个往前面进行调换
+    // //  for(let i = 0; i < ary.length ; i++) {
+
+    // //  }
+    // let i = 0;
+    // while(ary[0] != arg) {
+    //     let a = ary[ary.length-(i+1)];
+    //     let b = ary[ary.length-(i+2)];
+
+    //    ary[ ary.length-(i+1)] = b;
+
+    // }
+    // }
+    // unshift(ary,0)
+    // console.log(ary);
+
+    function shift(ary) {
+      let data = ary[0];
+       for(let i = 1;i < ary.length; i++){
+           ary[i-1] = ary[i];
+       }
+       ary.length--;
+
+      return data;
+    }
+    shift(ary);
+    console.log(ary);
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+   /*
+   创建元素的两种方式：
+      ele.innerHTML  = ``;  在赋值之前，还是字符串
+      document.createElement(标签名)  创造一个元素节点
+
+      parent.appendChild(children)  :
+
+      appendChild
+            往指定元素的末尾添加元素
+
+        
+   */
+
+  let d = document.createElement('div');  //创建的时候就已经是一个节点了，还没插入到页面中就有属性了
+  d.innerHTML = '珠峰'
+  console.log(d);  
+  d.onclick = function() {
+      alert(1);
+  }
+  box.appendChild(d);
+</script>
+</body>
+</html>

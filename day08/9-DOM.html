@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        1
+        <!---哈哈-->
+    </div>
+<script>
+    /*
+       DOM：document object model  文档对象模型   
+
+       文档：整个页面就是文档
+
+       通过document提供的api，赋予开发者操作页面的能力
+
+       被组织在一个树形结构中，DOM树
+
+       难点：弄清结构关系
+
+       页面的标签和DOM中的对象是一一映射的关系，操作对象就等于操作标签
+
+       在页面中，所有的内容都叫节点 node
+
+       为什么标签叫元素？
+           因为标签为元素节点
+        
+        检测数据类型，typeof
+        检测节点类型，nodeType
+
+        所有节点都是对象
+
+            元素节点  1
+            文本节点  3  ：包括文本和空文本
+            注释节点  8
+            属性节点  2
+            文档节点  9
+
+            css的权重
+            ！important (10000) > 行内(1000) >id(100) >class(10) >标签(1)
+
+        childNodes :找到某个元素下的所有子级，是个集合，要访问某个节点需要下标
+
+        attributes  ：元素属性的映射表 是一个集合，查看元素的某个属性用下标
+
+        nodeName  ：节点属性的名称
+
+        nodeVlue：节点属性值
+    */
+   console.log(box.nodeType);
+   console.log(box.childNodes); // 集合
+   console.log(box.childNodes[0]); //->1
+   console.log(typeof box.childNodes[0]); // ->object
+   console.log(box.childNodes[0].nodeType); //->3  文本节点
+   console.dir(box.childNodes[1]); //-> 
+   console.log(box.attributes);
+
+
+</script> 
+</body>
+</html>

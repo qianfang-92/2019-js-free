@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+      splice 可以删除，添加，修改，查找
+
+      删除：
+         splice(第几位开始，删除几个)
+         返回值是被删除的几个数据，用数组包着
+         如果一个都不删除，返回一个空数组
+
+    添加：
+        splice(第几位开始，0删除，添加的数据)
+
+    修改：
+        splice(第几个开始，删除几个，替换成什么数据)
+
+    查看：
+        只有删除才能查看，不然为[]
+    
+    
+    */
+    let ary = [1,3,4];
+    console.log(ary.splice(2,1));
+    ary.splice(2,0,3,6,4);
+    console.log(ary);
+    ary.splice(2,1,'');
+    console.log(ary);
+
+    /*
+    数组去重
+
+    因为splice会改变原数组，在循环删除的时候要注意数组塌陷
+
+    当数组塌陷时，不要让循环自增，就解决了
+    
+    */
+    let num = 0;
+    //5
+    //
+    let ary2 = [1,2,1,1,1,8,1,1,2,3,3,2,2];
+    for(var i = 0;i < ary2.length;i++) {
+        for(var j = i + 1;j < ary2.length;j++) {
+            if(ary2[i] === ary2[j]){
+                // console.log(ary2[j])
+                ary2.splice(j,1);
+                j--;
+            }
+        }
+        // break
+    }
+    console.log(ary2)
+</script>
+</body>
+</html>

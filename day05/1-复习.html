@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <a href="javascript:;"></a>  
+    <!-- src 或者href不能直接作为判断条件 它是绝对路径-->
+<script>
+    /*
+      JS是什么，应用范围，前端介绍
+        javascript 脚本语言 发明的时候是为了一点页面的交互
+
+        只要是浏览器都会用到js，js是寄生在浏览器里面  V8引擎；
+        node.js在服务端，可以做服务端的事情
+        手机端上，用js去调用安卓或ios，整个前端也可以写手机端页面，进行交互（火狐OS）
+
+      JS组成
+        ECMAScript  标准语法，规定js的语法，
+        DOM 文档对象模型 document object model，使js能够操作页面，操作页面中的元素，行为，使页面更加生动
+        BOM 浏览器对象模型 browser object model ，浏览器的一些浮动在页面中的广告，回到顶部等都属于浏览器，用js也可以进行操作 
+
+      JS的引入方式
+        内嵌  div前标签里，写的东西
+        内联  在Body标签结束标签前放一个script标签
+        外链  在script标签的前标签里添加src属性，链接外部的一个js的文档（一般是js文件，别的文件也可以，只要长的像js代码）
+              注意，外链时，就不能在script标签里面写代码了，不然无效
+
+      变量
+        把数据存储到一个自定义名字的变量中，为了复用，减少代码量，后面的数据是可以改变的
+        let :ES6新增的关键字
+        var 
+      
+      常量
+        const 这个数据不能被改变的
+
+      属性的操作
+        元素是一个对象  - ->element
+        对象有很多属性 innerText文本  innerHTML结构+文本 value（input表单内容） href链接 src链接 style样式
+    
+    */
+    //元素的属性赋值才是写操作
+let val = txt.value;
+
+val = '10';  // 变量赋值只是改变变量，不能改变txt.value值
+
+txt.value = val; // 这样才是给元素的属性赋值
+
+let val = txt.value;//此时value是还没点击之前的值，
+btn.onclick = function(){
+    console.log(val)  //->这里输出的也还是还没点击时的val值，可能是''
+    console.log(txt.value); // 这样才可以输出点击之后的value值
+}
+
+
+
+
+    /*
+      ECMAScript数据类型
+         数字 Null Undefined 布尔值 对象 字符串 symbol
+
+         数字：
+            正常数字
+            强制类型转换 ：Number('2') ->2
+                         Number({}) ->NaN
+                         Number(undefined) ->NaN
+                         Number(null) ->0
+                         Number([]) ->0
+                         Number('') ->0
+                         Number(true) ->1
+                         Number(false) ->0
+
+                         parseInt('2') ->2
+                         parseInt(字符串，进制数)  ->十进制的整数
+                         parseInt()
+
+                         parseFloat(字符串)  ->数字，包括小数
+
+                         number.toFixed(保留小数位数)  转为字符串，保留了指定位数的小数，并四舍五入
+
+                         NaN  是一个非法数字，进行了非法的数学运算
+                             isNaN()  检测是否是NaN
+
+        字符串：
+            单引号或双引号对包括的，还有``，成对出现
+            字符串的拼接：不管什么数据类型+字符串，都是字符串的拼接，并会调用toString方法把数据转为字符串类型
+                       ''+html+''+html2+''
+                       `内容${插入的内容}内容`
+            字符串前面有个+，就会转换为数字
+            什么是字符串：
+                在HTML中所有文本都是字符串
+                设置属性的时候，属性名都是字符串
+            alert会调用浏览器本身的弹框，调用toString方法转为字符串，alert会阻滞后面的代码
+            window.name也调用了toString方法隐式转换为字符串
+            数组toString是变成字符串的1，2，3，4
+            对象的toString 是变成 '[object object]'
+        
+        布尔值：true  false
+            Boolean 转换布尔值
+                  真：true
+                      非零数字
+                      非空字符串
+                      对象、数组
+                  假：false
+                      0
+                      ''
+                      NaN
+                      null
+                      undefined
+
+        null  空指针，
+              代表未来赋值对象变量的初始化值  let obj = null;
+              找不到元素的时候为null
+              释放变量引用可以赋值null
+              正则匹配不到为Null
+        
+        undefined  未定义
+             变量定义了没有赋值，是undefined
+             对象没有属性，
+             除了null undefined 的别的简单类型数据添加自定义属性或方法时为undefined
+             函数没有返回值，默认为undefined
+             函数形参没有传入实参时，为undefined
+
+        null == undefined   ->true   
+
+        对象：引用类型 16进制的堆内存
+            {}  []  RegExp  Date  ...
+            {}：
+               {   key:vale, key2:value2},key为字符串，value为任意数据类型，键值对之间用逗号分开
+               对象属性的获取：obj.XXX   obj['可变']  
+               删除属性  delete obj.xxx
+               'XX' in obj  ->布尔值
+               可以用for in循环，遍历各个属性
+               for(let attr in obj){
+                   attr 对象的每个属性
+                   obj[attr]
+               }
+            []:  new Array
+               里面可以有任意数据类型的成员
+               通过下标找数据成员  [][1]  从0开始计数
+               有length属性  能读，能写  超过原本的长度时，empty*超出长度
+               ary.[length-1]是最后一个
+            
+      赋值赋址
+            基本数据类型：
+               数字，字符串，布尔值，null undefined symbol
+
+            引用数据类型：
+               {}  []  RegExp  Date  ...
+            
+            当声明一个基本数据类型的时候会在全局作用域中开一个小空间存放简单值
+            简单类型的赋值，是复制一份值，赋值给另一个变量，是按值操作，这个过程是在js作用的全作用栈里，修改一个变量值是不会改变另一个变量的
+
+            当声明一个引用数据类型的变量的时候，会在全局作用域外开辟一个16进制的堆内存空间，把值存在这个空间里，然后把地址赋值给变量
+            再次申明一个新的变量等于这个变量时，实际上就是把原变量的值的地址赋值给这个新的变量，在改变新变量的值时，就是在改变地址里的值，所以，拥有相同地址的旧变量的值也会改变的。
+            引用类型的赋值是赋址
+    */
+
+    /*
+      运算符
+        + - * / %
+          数字 + 数字 = 数字
+          数字 + 字符串 = 字符串拼接
+          - * / % 都是隐式类型转换，结果为数字
+          A%B  :A对B取余
+          ++  -- 自增  自减 一次  a++  后自增  ++a  前自增
+          += 在自身基础上累计加一个东西  A+=B ->A = A+B
+          %=   A%=B  -> A = A%B
+          *=   类似于之前的
+          /=   类似于之前的
+
+        = == === ！= ！==
+          一个= 是赋值  ，先看右边的，再赋值给左边
+          ==  比较  只比较值  
+             数字跟数字比
+             数字和布尔值比，先把布尔值转换为数字
+             数字和字符串比，字符串转为数字再比较  Number转换
+             字符串和字符串比 unicode编码
+             对象和对象比 比较的是空间地址
+             NaN 不等于自身 也不等于其他
+             数字和对象比，对象先toString，再转成数字NaN
+             null 和undefined比，true  ，它们俩和别的比，都是false
+          === 全等  不但要比较值，还要比较类型
+          
+            
+        ！  ||  &&
+           ！否 非 取反
+               真的会变成假的，并转成布尔值
+               let val = txt.value;
+               if(val === '')   ->if(!val)
+            A||B  如果A不成立，就去B   如果A成立，不走B
+               let a;
+               a = a||5;  // 如果a为假，默认a是5，此时a是undefined ,就默认为5
+            A&&B  A条件成立才会走B，A不成立就不走B
+
+             
+        ？ ：
+           三目运算符
+           ？前面的是条件，如果成立，执行？后的语句一，不成立，执行：后面的语句二
+
+      条件判断
+        if(条件){//成立时
+            语句一
+        }else{
+            语句二 //不条件不成立时
+        }
+        可以这么写： if(a < 0) console.log(0);
+      
+      switch判断
+
+         switch(变量){
+             case'条件一'：语句一
+             break;
+             case'条件二'：语句二
+             break;
+             default:都不满足了的语句，默认语句
+             break；
+         }
+         注意：一个条件语句与下一个条件语句用break分割，如果不，会穿透
+
+      循环
+          for(初始化；条件；下次循环的铺垫){
+
+          }
+
+          let i = 0 ;
+          let len = ali.length;
+
+          let i = 0, len = ali.length  (这个就相当于上两行，而且只有一个let，性能优化)
+
+          所以：
+          if的小括号里可以这样
+          if(let i = 0,len = ali.length;i<len;i++)  这样因为初始化只执行一次，只用获取一次ali.length，会优化一点性能
+                1、 初始化执行一次
+                
+        单纯的for套for,2个for的变量千万不要重名（或者用let）  
+        先执行一次大循环，然后再执行完小循环，然后再执行一次大循环，再执行完小循环
+
+        for(){
+            for(){}
+        }
+
+        不单纯的：
+        for(let i = 0;i<3;i++){
+            ali[i].onclick = function(){
+                for(let i = 0;i<3;i++)
+            }
+        }
+
+
+
+      类型检测
+         typeof ：字符串  数字 undefined boolean 函数  object检测可以
+
+         object不能细分类型，null检测出为object
+
+         与ECMAScript检测出类型的区别是：字符串  数字 undefined boolean null object
+
+         ary instanceof Array  :检测左值是不是右边构造出来的
+
+         Object.toString.call(ary) === '[object Array]'  ***最稳
+
+         Array.isArray(ary)
+
+         [].constructor === Array
+
+         ary instanceof Array
+
+         Object.toString.call(ary) === '[object Array]'
+
+         Array.isArray(ary)
+
+         [].constructor === Array
+
+    */
+
+    /*
+      函数
+         函数定义：
+            1、开辟一个16进制的堆内存空间
+            2、把代码当作字符串存在函数体内
+            3、把空间地址给函数名
+            function fn(){
+                代码 被当作字符串存在堆内存里
+            }
+
+            函数表达式：只能在声明之后调用
+               let fn = function(){}
+
+            匿名函数自执行
+              (function(){})()
+
+            箭头函数
+               let fn = () =>{}
+               let fn = a =>{
+               let fn = a =>
+               
+        函数的调用
+            1、开辟一个执行栈
+            2、形参赋值
+            3、执行上下文
+            4、销毁参数和变量（执行环境销毁）
+           fn()
+        函数的参数：
+            形参
+            实参
+            一一对应，实参可以传入任意数据类型
+            arguments
+               在函数内的类数组，所有实参的集合，有length,有下标。。箭头函数没有arguments
+            剩余运算符 ...xxxx  剩余参数，是数组
+        函数返回值
+            return后面是什么，函数返回值就是什么
+            return下面的代码不执行了（在函数体内）
+        函数的三种角色
+            普通函数、构造函数、Function实例
+    
+
+
+      自定义属性
+           在对象上添加一个自定义名字的变量，属性前面有.，.XXX就是属性
+           自定义的好处：
+               每个元素（对象）都有一个相同名字的属性，但是互不干扰
+           
+    */
+    //命名空间（单例模式）
+    let ff = {
+        a:10
+    }
+    let dd = {
+        a:20,
+    }
+    //这样，就算有两个不同值的a变量，我们可以通过使用不同对象的a来实现互不干扰
+</script>
+</body>
+</html>

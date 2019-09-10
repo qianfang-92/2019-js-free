@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       倒计时：
+           未来的时间 - 现在多少时间 = 剩下多少时间
+    */
+    let d = new Date();
+    console.log(d.getFullYear() + '年' + (d.getMonth() +1) +'月' + d.getDate() + '日');
+
+    //使用字符串的方式设置时间
+
+    let time = new Date('2019 9 6 12:00:00');  //new 是一个函数运算符，括号里可以传参
+    console.log(time);
+
+    //用数字的方式去设置时间（注意：月份要在当前基础上 -1）
+    let time2 = new Date(2019,8,6,12,00,00);
+
+    // d.setDate(0); //如果使用setDate去设置时间，参数为0，那么自动会去上个月最后一天
+    d.setDate(31); //如果这样设置时间，参数大于当前月份，那么会自动到下个月第一天
+    console.log(d);
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt"><button id="btn">添加</button>
+    <ul id="ul">
+    </ul>
+<script>
+    //需要实现，点击按钮，就把input里的内容给ul下的li
+
+    let ary = [];
+    btn.onclick = function() {
+        ary.unshift(txt.value);
+        render();
+    }
+    function render() {
+        let html = '';
+        for(let i = 0;i < ary.length;i++) {
+            html +=`<li>${ary[i]}</li>`
+        }
+        ul.innerHTML = html;
+        txt.value = '';
+    }
+</script>
+</body>
+</html>

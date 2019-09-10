@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //查询下列数组中zhufeng出现的次数，所在的索引,indexOf
+    let ary = ['zhufeng','hahh',1,'zhiaho ','zhufeng','fwefs','sdfs','zhufeng'];
+    
+    let ary2 = [];
+    let num = 0;
+    // for(var i = 0;i < ary.length; i++) {
+    //     if(ary.indexOf('zhufeng',i) != -1){
+    //         ary2.push((ary.indexOf('zhufeng',i)));
+    //        num = i
+    //     }
+       
+    // }
+    // console.log(num,ary2);
+
+    while(ary.indexOf('zhufeng',i) != -1) {
+        let j = ary.indexOf('zhufeng',i);
+        num++;
+        ary2.push(j);
+    }
+    console.log(num+'个',ary2);
+</script>
+</body>
+</html>

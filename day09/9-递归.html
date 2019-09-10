@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+       递归：函数自己调用自己
+            参数不同，还想反复执行同一段代码，这个时候用递归
+
+        写递归的时候，一定要有一个终止函数调用的条件，不然会死循环
+
+
+        作业：js的去重方式有哪些？三种以上的
+    */
+    //面试题
+    //fn(5)  实现1+2+3+4+5
+  function fn(n) {
+    if(n === 1)return 1;
+    return fn(n-1) +n
+  }
+  console.log(fn(5));
+</script>
+</body>
+</html>

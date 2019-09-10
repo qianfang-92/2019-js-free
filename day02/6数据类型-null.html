@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+   /*
+      null 空地址 这个东西是不存在的
+
+      1、元素不存在或者获取不到某个元素（有时可能是因为script标签放在位置不是body的结尾，当浏览器解析时没有搜索到script标签之前的内容里有获取的元素）
+      2、赋值一个空地址  对象初始化时
+      4、变量回收时，用Null
+      3、正则没有匹配到字符的时候会出现null
+   
+   */ 
+
+   console.log(typeof null); // ->object  ;这个结果是不准确的，提问null是什么，就是一个基本数据类型而已；但是要记住typeof它是object要记住，面试问过
+
+</script> 
+</body>
+</html>

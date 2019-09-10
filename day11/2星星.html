@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    //写一个函数, 传进一个数字, 数字是几, 就打印几行 * 号,第几行就有几个星号
+
+    /*
+        递归？？
+        循环？
+    */
+   function printStars (lines) {
+      
+    //   let stars = '';
+    //   for (let i = 0; i < lines; i++) {
+    //       stars += '*'
+    //       console.log(stars)
+    //   }
+    //如果lines是1
+        // if (lines == 1) {
+        //     console.log('*');
+        // } else if (lines == 2) {
+        //     console.log('*');
+        //     console.log('***');
+        // } else if (lines ==3) {
+        //     console.log('*');
+        //     console.log('***');
+        //     console.log('*****');
+        // }
+        // let printTimes = 0;
+        let stars = ''
+        for (let i = 0; i < lines; i++) {
+            //stars 里面应该有 printTimes数量 + 1 个星星
+            // let stars = '*'
+            // for (let j = 0; j < printTimes; j++) {
+            //     stars += '*'
+            // }
+            //除了第一行，每行的星星都是行索引加2个
+            if (i == 0) {
+                stars += '*'
+            } else {
+                stars += '**'
+            }
+            console.log(stars);
+            // printTimes++;
+            // stars += '*'
+        }
+   }
+   printStars (5);
+</script>
+</body>
+</html>

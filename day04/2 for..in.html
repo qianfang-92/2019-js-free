@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+<script>
+    /*
+       in 运算符
+            运算对象是否有指定属性
+       
+    
+    
+    
+    */
+let obj = {
+    name:'jiang',
+    age:18,
+    job:'qianduan'
+}
+
+console.log('sex'in obj); // ->false
+
+// for in循环
+for(var attr in obj){
+    console.log(obj[attr]);  //  attr就是obj对象的每个属性
+    // console.log(obj.attr)  这个不行，因为 . 后面要是obj的确定的属性名，而获取obj的属性的方法有两个，一个是用 . ,一个是用[]，这里attr是个变量，一直在变，所以需要用[]，[]里放的是字符串，而attr代表的就是name age  job 这几个字符串，所以就这样写就可以了。
+}
+/*
+   for in
+      枚举对象下的每个属性，遍历这些属性名
+      in前面写的变量就是每个属性名
+      获取对象的属性值：obj[变量]
+*/
+
+//对象没有length属性，所以不能用for循环，只能用for in循环；
+let nu = {
+    width:'100px',
+    height:'100px',
+    background:'darkgreen',
+    border:'1px solid red'
+}
+
+for(var attr in nu){
+    box.style[attr] = nu[attr];  
+}
+
+let ary = [true,'zhufeng','18','yanjie']
+
+for(var i in ary){
+    console.log(i); //  数组用for in循环，遍历不出来length属性  ；数组尽量不要用for in循环，因为for in性能没有for高
+}
+
+// 特殊格式的对象，可以用for循环，只是length被写死了，然后对象的属性名用的是从0开始的数字
+let gm = {
+    0:'100px',
+    1:'100px',
+    2:'darkgreen',
+    3:'1px solid red',
+    length:4
+}
+
+</script>
+</body>
+</html>

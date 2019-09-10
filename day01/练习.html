@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        珠峰培训
+        <p>
+            11111
+            <span>22222</span>
+        </p>
+    </div>
+
+<script>
+    const box = document.getElementById('box');
+    /**
+       innerText  在元素中添加文本
+
+       innerHTML  在元素中添加内容 文本和结构
+    */
+    document.onclick = function(){
+        box.innerText = '<p>加内容</p>';
+    }
+    document.onclick = function(){
+        box.innerHTML = '<p>加内容</p>';
+    }
+    console.log(box.innerText);
+</script>
+</body>
+</html>

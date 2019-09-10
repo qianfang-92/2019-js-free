@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击计算</button>
+    <span id="s1">12.6353</span> + <span id="s2">12</span> <span>=</span> <span id="s3"></span>
+<script>
+    const btn = document.getElementById('btn');
+    const s1 = document.getElementById('s1');
+    const s2 = document.getElementById('s2');
+    const s3 = document.getElementById('s3');
+
+    btn.onclick = function(){
+        s3.innerText = (s1.innerText) + parseInt(s2.innerText);
+    }
+</script>
+</body>
+</html>

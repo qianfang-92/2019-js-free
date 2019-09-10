@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+      replace(要替换谁(字符串||正则)，替换成什么(字符串||回调函数))  替换
+    */
+   let str = '艹,你妹金三胖';
+
+   let ss = str.replace('你妹',function($0) {
+       let temp = '';
+       for(let i = 0; i < $0.length;i++) {
+           temp += '*';
+       }
+       return temp;
+   })
+   console.log(ss);
+</script>
+</body>
+</html>

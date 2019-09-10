@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        /*
+        标准key值要加上双引号，不过Js本身随意，可以不加，但是在真实的开发中后台传输的数据是标准的格式
+
+        . 下的
+
+        输出对象下的key值，就等于这个key对的value值
+
+        我们叫name, age , ary  为属性名
+        冒号右边的是属性值
+        */
+    let obj = {
+        "name":"烛光",
+        "age":18,
+        "ary":[1,2,3,4],
+        "style":{
+          "display":"none",
+        }
+
+    }
+    // console.log(obj);
+    // console.log(obj.name);
+
+    console.dir(obj);
+
+    </script>
+</body>
+</html>

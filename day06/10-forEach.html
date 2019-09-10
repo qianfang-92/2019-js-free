@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+      forEach(callback,修改this指向)：
+           数组的循环
+
+        callback(item,index,all)   
+    */
+    let ary = [2,6,4,8];
+    ary.forEach(function(item){
+        console.log(item);
+        console.log(this);// 默认this是window，可以通过第二个参数修改
+    },document)
+
+</script>
+</body>
+</html>
