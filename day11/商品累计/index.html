@@ -70,7 +70,7 @@
 			</div>
 		</div>
 	</div>
-	<script>
+	<script src =''>
 		const is = document.querySelectorAll('li i');
 		console.log(is);//全部的i 标签都获取了，所以为了区别，需要用奇数偶数来区分，因为符号不同，一个是减号，一个是加号 有10个
 		const ems = document.querySelectorAll('li em');
@@ -83,17 +83,60 @@
 					if (i % 2) {
 						num++;
 						ems[(i - 1)/2].innerText = num;
-					} 
-					if (!(i % 2)){
-						num--;
-						ems[(i)/2].innerText = num;
+						console.log((i-1)/2);
 					}
+					// let n = num;
+					if (!(i % 2)){
+						num --;
+						ems[i/2].innerText = num;
+						console.log(i/2);
+					}
+					console.log(num);
 				}
 
 			}
 		}
 	</script>
+
+		<script>
+			const totalN = document.querySelectorAll('.info em')[0];
+			const totalP = document.querySelectorAll('.info em')[1];
+			const large = document.querySelectorAll('.info em')[2];
+			const is = document.querySelectorAll('li i');
+			console.log(is);//全部的i 标签都获取了，所以为了区别，需要用奇数偶数来区分，因为符号不同，一个是减号，一个是加号 有10个
+			const ems = document.querySelectorAll('li em');
+			console.log(ems); // 有 5个
+			const lis = document.querySelectorAll('.list li')
+			for(let i = 0 ; i < is.length; i++){
+				is[i].onclick = function () {
+					var n = parseInt(i/2);
+					var num = ems[n].innerText;
+					var strongs = lis[n].getElementsByTagName('strong');
+					if (i % 2 ) {
+						num++;
+					}else{
+						num--;
+					}
+					ems[n].innerText = num
+					var p = parseFloat(strongs[0].innerText)
+					strongs[1].innerText = p*num+'元';
+					getTotal();
+				}
+			}
+			function getTotal() {
+				let t = 0;
+				let num = 0;
+				for(var i = 0 ; i < lis.length; i++){
+					let st = lis[i].getElementsByTagName('strong');
+					t += parseFloat(st[1].innerText);
+					num += ems[i].innerText/1
+				}
+				totalN.innerText = num;
+				totalP.innerText = t;
+			}
+		</script>
+	
+	
 </body>
 
 </html>
-8、

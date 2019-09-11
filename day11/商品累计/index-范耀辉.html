@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body,
+		ul,
+		li {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="price.css" />
+</head>
+
+<body onselectstart="return false;">
+	<div class="wrap">
+		<div class="box">
+			<ul class="list">
+				<li>
+					<i></i>
+					<em>0</em>
+					<i></i>
+					<span>
+						单价：<strong>12.5元 </strong> 小计：<strong>0元</strong>
+					</span>
+				</li>
+				<li>
+					<i></i>
+					<em>0</em>
+					<i></i>
+					<span>
+						单价：<strong>10.5元 </strong> 小计：<strong>0元</strong>
+					</span>
+				</li>
+				<li>
+					<i></i>
+					<em>0</em>
+					<i></i>
+					<span>
+						单价：<strong>8.5元 </strong> 小计：<strong>0元</strong>
+					</span>
+				</li>
+				<li>
+					<i></i>
+					<em>0</em>
+					<i></i>
+					<span>
+						单价：<strong>8元 </strong> 小计：<strong>0元</strong>
+					</span>
+				</li>
+				<li>
+					<i></i>
+					<em>0</em>
+					<i></i>
+					<span>
+						单价：<strong>14.5元 </strong> 小计：<strong>0元</strong>
+					</span>
+				</li>
+			</ul>
+			<div class="info" id="info">
+				<span>商品公合计：<em>0</em>件</span>
+				<span>共花费了：<em>0</em>元</span>
+				<br />
+				<br />
+				<span>其中最贵的商品单价是：<em>0</em>元</span>
+			</div>
+		</div>
+	</div>
+	<script>
+
+		const lits = document.querySelectorAll("li");
+		const info = document.querySelector("#info");
+		let sum = 0;
+		let prices = 0;
+  		let ary=[];
+		for (let i = 0; i < lits.length; i++) {
+			lits[i].inde = 0;
+			lits[i].ssum = lits[i].children[3].children[1].innerText;
+			lits[i].children[0].onclick = function () {
+				// debugger;
+				if (lits[i].inde <= 0) {
+					lits[i].inde == 0
+					this.parentNode.children[1].innerText = lits[i].inde;
+				} else {
+					lits[i].inde -= 1;
+					sum--;
+					this.parentNode.children[1].innerText = lits[i].inde;
+					let price = this.parentNode.children[3].children[0].innerText;
+					let ssum = parseFloat(price) * lits[i].inde;
+					var m=parseFloat(this.parentNode.children[3].children[0].innerText);
+					
+					if(ssum==0){
+					 ary.splice(ary.indexOf(parseFloat(m)),1);
+					 
+					 info.children[4].children[0].innerText = Math.max(...ary);
+					//  console.log(ary);
+					 if(ary.length===0){
+						// console.log(info.children[4].children[0].innerText);
+						info.children[4].children[0].innerText=0;
+						// console.log(info.children[4].children[0].innerText);
+					 }
+			     	}
+						
+					 
+					//  console.log(ary);
+					this.parentNode.children[3].children[1].innerHTML = ssum + "元";
+					info.children[0].children[0].innerText = sum;
+					lits[i].ssum = ssum;
+					prices= parseFloat(lits[0].ssum) + parseFloat(lits[1].ssum) + 
+				    parseFloat(lits[2].ssum)+ parseFloat(lits[3].ssum) + parseFloat(lits[4].ssum);
+					info.children[1].children[0].innerText = prices;
+					
+				
+				}
+			}
+			lits[i].children[2].onclick = function () {
+				// debugger;
+				lits[i].inde += 1;
+				sum++;
+				this.parentNode.children[1].innerText = lits[i].inde;
+				let price = this.parentNode.children[3].children[0].innerText;
+				let ssum = parseFloat(price) * lits[i].inde;
+				lits[i].children[3].children[1].innerHTML = ssum + "元";
+				info.children[0].children[0].innerText = sum;
+				lits[i].ssum = ssum;
+				prices= parseFloat(lits[0].ssum) + parseFloat(lits[1].ssum) + 
+				parseFloat(lits[2].ssum)+ parseFloat(lits[3].ssum) + parseFloat(lits[4].ssum);
+				info.children[1].children[0].innerText = prices;
+				 var m=parseFloat(this.parentNode.children[3].children[0].innerText);
+				if(!ary.includes((m))){
+				//    console.log(m);					
+					ary.push(m);
+					// console.log(ary);
+				}
+					info.children[4].children[0].innerText = Math.max(...ary);
+					
+			}
+			// console.log(ary);
+		}
+
+
+
+
+
+
+
+		// let num = 0;
+		// for (let i = 0; i < liis.length; i++) {
+
+
+		// 	liis[i].inde = num;
+		// 	console.log(liis[i].inde);
+
+
+
+		// 	if (i % 2) {
+
+		// 		liis[i].onclick = function () {
+
+		// 			// console.log(this.inde);
+
+		// 			this.inde += 1;
+		// 			this.parentNode.children[1].innerText = this.inde;
+
+		// 			num = this.inde;
+
+
+
+		// 		}
+
+		// 	} else {
+
+		// 		liis[i].onclick = function () {
+		// 			//减
+
+		// 			liis[i].inde -= 1;
+
+
+		// 			if (liis[i].inde <= 0) {
+		// 				this.inde = 0;
+		// 			}
+		// 			this.parentNode.children[1].innerText = this.inde;
+
+
+		// 		}
+
+
+		// 	}
+
+
+		// }
+
+
+
+	</script>
+</body>
+
+</html>

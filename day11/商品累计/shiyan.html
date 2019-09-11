@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin:100px auto;
+            width:100px;
+        }
+
+        span {
+            border: 1px solid #000;
+            height: 20px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button>减</button>
+        <span>0</span>
+        <button>加</button>
+    </div>
+    <script>
+        let n = 0;
+        const btns = document.querySelectorAll('button');
+        const number = document.querySelector('span');
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].onclick = function () {
+                if ( i == 0) {
+                    n += 1;
+                    number.innerText = n;
+                } else {
+                    n -= 1;
+                    number.innerText = n;
+                }
+            }
+        }
+       
+
+        for(let i = 0 ; i < is.length; i++){
+			is[i].onclick = function () {
+				var n = parseInt(i/2);
+				var num = ems[n].innerText;
+				if (i % 2 ) {
+					num++;
+				}else{
+					num--;
+				}
+				ems[n].innerText = num
+				
+			}
+		}
+    </script>
+
+</body>
+
+</html>
