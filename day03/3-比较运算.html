@@ -35,7 +35,7 @@
     console.log('0' == ''); //->false 因为字符串和字符串相比较不会转为数字，而是它们之间比较用unicode编码进行比较
     console.log('21' > '2000'); // ->true 它是一位一位的比，第一位都是2，第二位左边是1，右边是0，所以左边大于右边
     console.log(NaN == NaN); //->false
-    console.log(false == []); // ->true  布尔值和对象比，转成对象
+    console.log(![] == []); // ->true  布尔值和对象比，转成数字
     
 
 

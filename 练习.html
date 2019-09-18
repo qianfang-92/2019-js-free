@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        Number 
+        在数字类型中，有一个数字类型叫NaN ,它的出现表示有一个非法的数学运算
+        Infinity
+        运算符：
+            + - * / %取余
+
+        + ：
+            字符串和别的任何数据相加都会变成一个字符串
+
+            字符串前面只有一个+号，那么结果会隐式类型转换为数字类型
+
+        - * /：
+            数据在进行减法运算，会转为数字类型 Number
+
+        % : 
+            A > B 正常取余
+            A < B 直接取A
+
+        parseInt (非数字类型，多少进制)  输出整数，并且向上取整，不四舍五入
+        perseFloat(非数字类型)   可以输出小数
+        Number 
+        toFixed 把数字转为保留指定小数位数的字符串 
+
+        isNaN  先用Number转一下里面的内容 然后再判断是否是NaN
+
+        HTML 中的所有文本都是字符串
+        设置样式时，值也是字符串
+
+        下面的情况下会默认 调用toString方法
+        alert 弹出的都是字符串
+        window.name 的属性值是个字符串
+
+        toString 方法 除了 null undefined 这两个数据类型没有，其他的都有自己的toString方法
+
+        Boolean ： 如果是引用数据类型 就算是空数组，空对象 也是 true
+
+        !  非 否  ；先用Boolean方法转为布尔值，再将其颠倒
+
+        快速知道某个东西的布尔值，写两个!!就可以
+
+        null 出现的情形：
+            元素不存在或获取不到某个元素
+            对象初始化时，给它赋值一个空地址null
+            变量使用完后，变量回收，null
+            正则没有匹配到字符的时候会出现null
+
+        undefined 未定义
+            声明了一个变量，但没有赋值，就是undefined
+            函数的默认返回值是undefined
+            引用数据类型没有某个属性 是undefined
+            基本类型（除了undefined null）自定义一个属性，就是undefined
+            有形参没有实参就是undefined
+
+        为什么 undefined == null 是true
+            因为undefined 是从null中派生出来的，ECMAscript把它们定义为相等的
+
+        == 比较时
+            数字和布尔值比较，布尔值会转为数字再进行比较
+            null undefined 不等于别的任何数据类型
+            对象和数字进行比较时，会先toString 然后再Number 再比较
+            对象和对象进行比较时，比较的是地址
+            字符串和数字比较时，会先转为数字比较
+            字符串和字符串的比较，比较的是unicode编码
+            布尔值和对象比，转成数字
+
+        && 并且 
+        || 或者
+
+        TagName  获取的是一堆类名相同的，获取出来的值是一个类数组
+
+        类数组是一个集合
+            类似于数组，有和数组类似的下标和length，但是没有数组的方法
+
+        for 套 for 运行的机制
+            先执行一次大循环，然后执行完小循环，再执行一次大循环，再执行完小循环
+
+        在for里使用：
+            跳过本次循环：
+                continue 
+                跳过本次循环，直接进入下一次循环，本次循环后面的代码都不看了
+            跳出整个循环：
+                break
+                当某个条件成立时，跳出循环体，循环中断，不会再自增或自减了
+
+        for in 循环
+            对象没有length属性，不能用for循环，只能用for in循环
+
+        函数定义和函数表达式的区别：
+            函数定义时，调用可以在同作用域直系环境 之调用
+            但是var进行的一个函数表达式，调用函数只能在这之后才能调用
+
+        while 循环 用在不知道要进行几次循环的时候，可以让只要满足条件，就进入while的循环体内，直至条件不满足
+
+        return 函数返回值  什么时候用？
+            把函数内的运算结果，拿到函数外面使用时，就要使用return
+            return 下面的代码是不执行的，当某个条件成立时，不执行下面的代码，用return
+
+        自定义属性：
+            给引用类型添加一个自定义的属性名
+
+        数组的方法：
+            push 在数组的最后一位添加一个或多个数据，返回值是新数组的长度，改变原数组
+            pop：删除数组的最后一位数据，返回被删除的那个数据，只能删除一位，改变原数组
+
+    */
+    console.log(parseInt('12.63'));//12
+    console.log(Number('12.34556'));//保持数的原样
+
+    var a = null + '123';
+    console.log(a);
+
+    var b = 12;
+    var c = (b++)
+    console.log(c); //还是12，所以这里的括号并不能提前运算++
+    console.log(b);
+
+</script>
+</body>
+</html>
